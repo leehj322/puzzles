@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { fadeUp, stagger, VIEWPORT_ONCE } from "@/shared/lib/motion";
 
 const DISCORD_URL = "https://discord.gg/your-invite";
-const CONTACT_EMAIL = "hello@puzzles.app";
+const CONTACT_EMAIL = "leemiro2344@gmail.com";
 
 export function FooterSection() {
   const t = useTranslations("home.footer");
