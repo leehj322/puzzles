@@ -19,22 +19,21 @@ const getBackHref = (pathname: string): string | null => {
   return null;
 };
 
-export function BackButton() {
-  const t = useTranslations("common");
+export const useBackHref = (): string | null => {
   const pathname = usePathname();
-  const href = getBackHref(pathname);
+  return getBackHref(pathname);
+};
 
-  if (!href) return null;
+export function BackButton({ href }: { href: string }) {
+  const t = useTranslations("common");
 
   return (
-    <div className="mx-auto max-w-4xl px-6 pt-3">
-      <Link
-        href={href}
-        aria-label={t("back")}
-        className="inline-flex items-center justify-center h-10 w-10 -ml-2 rounded-nav text-fg-muted hover:text-fg hover:bg-surface-warm transition-colors"
-      >
-        <ChevronLeft aria-hidden className="h-6 w-6" />
-      </Link>
-    </div>
+    <Link
+      href={href}
+      aria-label={t("back")}
+      className="inline-flex items-center justify-center h-10 w-10 -ml-2 rounded-nav text-fg-muted hover:text-fg hover:bg-surface-warm transition-colors"
+    >
+      <ChevronLeft aria-hidden className="h-6 w-6" />
+    </Link>
   );
 }
