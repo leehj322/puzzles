@@ -7,7 +7,15 @@ import type { PuzzleTypeId } from "@puzzles/core";
 export function SlidingIllustration() {
   return (
     <svg viewBox="0 0 100 100" className="h-24 w-24" aria-hidden>
-      <rect x="10" y="10" width="36" height="36" rx="6" fill="#fff" opacity="0.95" />
+      <rect
+        x="10"
+        y="10"
+        width="36"
+        height="36"
+        rx="6"
+        fill="#fff"
+        opacity="0.95"
+      />
       <motion.rect
         x="54"
         y="10"
@@ -24,7 +32,15 @@ export function SlidingIllustration() {
           ease: "easeInOut",
         }}
       />
-      <rect x="54" y="54" width="36" height="36" rx="6" fill="#fff" opacity="0.95" />
+      <rect
+        x="54"
+        y="54"
+        width="36"
+        height="36"
+        rx="6"
+        fill="#fff"
+        opacity="0.95"
+      />
     </svg>
   );
 }
@@ -108,8 +124,8 @@ export function SudokuIllustration() {
 export function NonogramIllustration() {
   const GRID_SIZE = 5;
   const CELL = 12;
-  const ORIGIN_X = 32;
-  const ORIGIN_Y = 32;
+  const ORIGIN_X = 22;
+  const ORIGIN_Y = 24;
 
   const colHints = ["2", "1", "3", "1", "2"];
   const rowHints = ["1,1", "3", "1", "3", "1,1"];
