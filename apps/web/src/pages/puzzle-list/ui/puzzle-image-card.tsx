@@ -1,5 +1,3 @@
-import { useTranslations } from "next-intl";
-
 import Image from "next/image";
 
 import { type PuzzleImage } from "@puzzles/core";
@@ -14,8 +12,6 @@ export function PuzzleImageCard({
   puzzleType: string;
   image: PuzzleImage;
 }) {
-  const t = useTranslations();
-
   return (
     <Link
       href={`/play/${puzzleType}/${image.id}`}
@@ -25,7 +21,7 @@ export function PuzzleImageCard({
         <div className="relative aspect-square">
           <Image
             src={image.src}
-            alt={t(image.titleKey)}
+            alt={`${puzzleType} 퍼즐 ${image.size}×${image.size}`}
             fill
             sizes="(max-width: 530px) 100vw, (max-width: 768px) 50vw, 25vw"
             className="object-cover"
@@ -34,9 +30,6 @@ export function PuzzleImageCard({
           <span className="absolute right-3 top-3">
             <Badge tone="neutral">{`${image.size}×${image.size}`}</Badge>
           </span>
-        </div>
-        <div className="px-4 py-3">
-          <h3 className="font-sans text-body">{t(image.titleKey)}</h3>
         </div>
       </div>
     </Link>

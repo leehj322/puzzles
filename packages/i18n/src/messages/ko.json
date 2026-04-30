@@ -76,13 +76,7 @@
   },
   "puzzleList": {
     "title": "퍼즐 선택",
-    "uploadSoon": "곧 직접 이미지를 등록할 수 있어요",
-    "images": {
-      "img1": "퍼즐 1",
-      "img2": "퍼즐 2",
-      "img3": "퍼즐 3",
-      "img4": "퍼즐 4"
-    }
+    "uploadSoon": "곧 직접 이미지를 등록할 수 있어요"
   },
   "puzzlePlay": {
     "moves": "이동",

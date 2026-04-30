@@ -76,13 +76,7 @@
   },
   "puzzleList": {
     "title": "Choose a puzzle",
-    "uploadSoon": "You'll be able to upload your own images soon",
-    "images": {
-      "img1": "Puzzle 1",
-      "img2": "Puzzle 2",
-      "img3": "Puzzle 3",
-      "img4": "Puzzle 4"
-    }
+    "uploadSoon": "You'll be able to upload your own images soon"
   },
   "puzzlePlay": {
     "moves": "Moves",

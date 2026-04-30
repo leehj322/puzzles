@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import { type PuzzleImage } from "@puzzles/core";
@@ -18,7 +17,6 @@ export function PuzzlePlayClient({
   puzzleType: string;
   image: PuzzleImage;
 }) {
-  const t = useTranslations();
   const init = usePuzzleStore((s) => s.init);
   const [preview, setPreview] = useState(false);
 
@@ -35,7 +33,7 @@ export function PuzzlePlayClient({
         />
         <PuzzleBoard
           imageSrc={image.src}
-          imageAlt={t(image.titleKey)}
+          imageAlt={`${puzzleType} 퍼즐 ${image.size}×${image.size}`}
           preview={preview}
         />
       </div>
