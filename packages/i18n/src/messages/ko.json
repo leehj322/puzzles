@@ -76,8 +76,8 @@
   },
   "puzzleList": {
     "title": "퍼즐 선택",
-    "uploadSoon": "곧 직접 이미지를 등록할 수 있어요",
-    "customSoon": "곧 직접 퍼즐을 추가할 수 있어요"
+    "addPuzzle": "등록하기",
+    "addPuzzleSoon": "퍼즐 직접 등록 기능은 조금만 기다려주세요"
   },
   "sudoku": {
     "difficultyLabel": "난이도",

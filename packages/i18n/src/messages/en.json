@@ -76,8 +76,8 @@
   },
   "puzzleList": {
     "title": "Choose a puzzle",
-    "uploadSoon": "You'll be able to upload your own images soon",
-    "customSoon": "You'll be able to add your own puzzles soon"
+    "addPuzzle": "Add",
+    "addPuzzleSoon": "Adding your own puzzles is coming soon"
   },
   "sudoku": {
     "difficultyLabel": "Difficulty",

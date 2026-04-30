@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 
 import { getPuzzleImages, getSudokuPuzzles } from "@puzzles/core";
 
-import { Badge } from "@/shared/ui/badge";
-
+import { AddPuzzleButton } from "./add-puzzle-button";
 import { PuzzleImageCard } from "./puzzle-image-card";
 import { SudokuPuzzleCard } from "./sudoku-puzzle-card";
 
@@ -17,11 +16,9 @@ export function PuzzleListView({ puzzleType }: { puzzleType: string }) {
     return (
       <main className="px-6 pt-6 pb-12 sm:pt-8 sm:pb-16">
         <div className="mx-auto max-w-4xl flex flex-col gap-10">
-          <header className="flex flex-col gap-4">
-            <div>
-              <Badge tone="accent">{t("customSoon")}</Badge>
-            </div>
+          <header className="flex items-center justify-between gap-4">
             <h1 className="font-sans text-h2">{t("title")}</h1>
+            <AddPuzzleButton />
           </header>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {puzzles.map((puzzle) => (
@@ -43,11 +40,9 @@ export function PuzzleListView({ puzzleType }: { puzzleType: string }) {
   return (
     <main className="px-6 pt-6 pb-12 sm:pt-8 sm:pb-16">
       <div className="mx-auto max-w-4xl flex flex-col gap-10">
-        <header className="flex flex-col gap-4">
-          <div>
-            <Badge tone="muted">{t("uploadSoon")}</Badge>
-          </div>
+        <header className="flex items-center justify-between gap-4">
           <h1 className="font-sans text-h2">{t("title")}</h1>
+          <AddPuzzleButton />
         </header>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {images.map((image) => (
