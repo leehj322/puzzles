@@ -25,8 +25,11 @@ export {
 export {
   getSudokuPuzzles,
   getSudokuPuzzle,
+  findSudokuConflicts,
+  isSudokuComplete,
   type SudokuPuzzle,
   type SudokuDifficulty,
+  type SudokuCell,
 } from "./sudoku-puzzle/sudoku-puzzle";
 
 export { formatTime } from "./format-time/format-time";

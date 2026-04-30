@@ -80,15 +80,16 @@
     "customSoon": "곧 직접 퍼즐을 추가할 수 있어요"
   },
   "sudoku": {
+    "difficultyLabel": "난이도",
     "difficulty": {
       "easy": "쉬움",
       "medium": "보통",
       "hard": "어려움",
       "expert": "전문가"
     },
-    "comingSoon": {
-      "title": "스도쿠는 곧 만나요",
-      "desc": "보드를 다듬고 있어요. 조금만 기다려 주세요."
+    "pad": {
+      "notes": "메모",
+      "erase": "지우기"
     }
   },
   "puzzlePlay": {

@@ -83,3 +83,53 @@ export const getSudokuPuzzles = (): readonly SudokuPuzzle[] => SUDOKU_PUZZLES;
 
 export const getSudokuPuzzle = (id: string): SudokuPuzzle | null =>
   SUDOKU_PUZZLES.find((p) => p.id === id) ?? null;
+
+export type SudokuCell = { r: number; c: number };
+
+const boxOf = (r: number, c: number) =>
+  Math.floor(r / 3) * 3 + Math.floor(c / 3);
+
+export const findSudokuConflicts = (
+  values: readonly (readonly number[])[],
+): ReadonlySet<number> => {
+  const conflicts = new Set<number>();
+  const seen: { row: Map<number, number>[]; col: Map<number, number>[]; box: Map<number, number>[] } = {
+    row: Array.from({ length: 9 }, () => new Map()),
+    col: Array.from({ length: 9 }, () => new Map()),
+    box: Array.from({ length: 9 }, () => new Map()),
+  };
+  for (let r = 0; r < 9; r++) {
+    for (let c = 0; c < 9; c++) {
+      const v = values[r][c];
+      if (!v) continue;
+      const idx = r * 9 + c;
+      const b = boxOf(r, c);
+      const groups = [
+        { map: seen.row[r], v },
+        { map: seen.col[c], v },
+        { map: seen.box[b], v },
+      ];
+      for (const { map, v: val } of groups) {
+        const prev = map.get(val);
+        if (prev !== undefined) {
+          conflicts.add(idx);
+          conflicts.add(prev);
+        } else {
+          map.set(val, idx);
+        }
+      }
+    }
+  }
+  return conflicts;
+};
+
+export const isSudokuComplete = (
+  values: readonly (readonly number[])[],
+): boolean => {
+  for (let r = 0; r < 9; r++) {
+    for (let c = 0; c < 9; c++) {
+      if (!values[r][c]) return false;
+    }
+  }
+  return findSudokuConflicts(values).size === 0;
+};

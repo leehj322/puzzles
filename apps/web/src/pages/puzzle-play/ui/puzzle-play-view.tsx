@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getPuzzleImage, getSudokuPuzzle } from "@puzzles/core";
 
 import { PuzzlePlayClient } from "./puzzle-play-client";
-import { SudokuComingSoon } from "./sudoku-coming-soon";
+import { SudokuPlayClient } from "./sudoku-play-client";
 
 export function PuzzlePlayView({
   puzzleType,
@@ -17,7 +17,7 @@ export function PuzzlePlayView({
     if (!puzzle) {
       notFound();
     }
-    return <SudokuComingSoon puzzle={puzzle} />;
+    return <SudokuPlayClient puzzle={puzzle} />;
   }
 
   const image = getPuzzleImage(puzzleType, imageId);

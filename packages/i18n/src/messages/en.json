@@ -80,15 +80,16 @@
     "customSoon": "You'll be able to add your own puzzles soon"
   },
   "sudoku": {
+    "difficultyLabel": "Difficulty",
     "difficulty": {
       "easy": "Easy",
       "medium": "Medium",
       "hard": "Hard",
       "expert": "Expert"
     },
-    "comingSoon": {
-      "title": "Sudoku is coming soon",
-      "desc": "We're polishing the board. Check back shortly."
+    "pad": {
+      "notes": "Notes",
+      "erase": "Erase"
     }
   },
   "puzzlePlay": {
