@@ -1,0 +1,23 @@
+{
+  "name": "@puzzles/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./base": "./base.mjs",
+    "./next": "./next.mjs"
+  },
+  "files": [
+    "base.mjs",
+    "next.mjs"
+  ],
+  "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "typescript-eslint": "^8.59.1"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
