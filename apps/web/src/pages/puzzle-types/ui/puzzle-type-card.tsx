@@ -61,7 +61,7 @@ export function PuzzleTypeCard({ type }: { type: PuzzleType }) {
 
   return (
     <Link
-      href={`/puzzles/${type.id}`}
+      href={`/browse/${type.id}`}
       className="block h-full focus-visible:outline-none"
     >
       {card}

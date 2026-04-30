@@ -41,7 +41,7 @@ export function FinalCtaSection() {
           {t("desc")}
         </motion.p>
         <motion.div variants={fadeUp} className="relative">
-          <Link href="/puzzles" className={buttonClass()}>
+          <Link href="/browse" className={buttonClass()}>
             {t("button")}
           </Link>
         </motion.div>

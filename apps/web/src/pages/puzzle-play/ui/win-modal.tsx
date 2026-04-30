@@ -64,7 +64,7 @@ export function WinModal({ puzzleType }: { puzzleType: string }) {
         <div className="flex gap-2 mt-2">
           <Button onClick={reset}>{tCommon("reset")}</Button>
           <Link
-            href={`/puzzles/${puzzleType}`}
+            href={`/browse/${puzzleType}`}
             className={buttonClass({ variant: "outlined" })}
           >
             {t("toList")}

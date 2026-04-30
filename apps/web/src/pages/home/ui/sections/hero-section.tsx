@@ -71,7 +71,7 @@ export function HeroSection() {
           {t("subtitle")}
         </motion.p>
         <motion.div variants={fadeUp}>
-          <Link href="/puzzles" className={buttonClass()}>
+          <Link href="/browse" className={buttonClass()}>
             {t("cta")}
           </Link>
         </motion.div>
