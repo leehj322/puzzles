@@ -1,0 +1,90 @@
+---
+description: Conventional Commits style used in this repo. Use when writing git commit messages or suggesting commit names so they stay consistent with the existing history.
+alwaysApply: false
+---
+
+# Commit message convention
+
+This project follows [Conventional Commits](https://www.conventionalcommits.org/)
+with project-specific scope conventions inferred from the existing git log.
+
+## Format
+
+```
+<type>(<scope>): <subject>
+
+[optional body]
+
+[optional footer]
+```
+
+- **Lowercase** for type, scope, and subject.
+- **No trailing period** on the subject line.
+- **Imperative mood** for the subject (`add`, `fix`, `replace`, `make`).
+- Keep the subject line under ~72 characters.
+- Separate header, body, and footer with blank lines.
+
+## Allowed types
+
+| Type       | Use for                                           |
+| ---------- | ------------------------------------------------- |
+| `feat`     | New user-facing feature or capability             |
+| `fix`      | Bug fix                                           |
+| `refactor` | Internal restructure with no behavior change      |
+| `style`    | Formatting / visual-only tweaks (no logic change) |
+| `chore`    | Tooling, deps, configs, lockfiles                 |
+| `docs`     | Documentation only                                |
+| `test`     | Tests only                                        |
+| `perf`     | Performance improvement                           |
+
+## Scope conventions
+
+Scope reflects **where** the change lives. Patterns observed in this repo:
+
+- **App name**: `web`, `mobile`
+- **Package name**: `core`, `i18n`, `design-system`
+- **Sub-area with slash**: `web/home`, `web/routes`, `web/puzzle-types`
+- **Domain feature**: `puzzles`, `puzzle-types`, `puzzle-illustration`
+- **Tooling**: `deps`, `eslint`, `next.config`
+
+Pick the most specific scope that still reads clearly. If the change spans
+many areas, drop the scope (`feat: ...`).
+
+## Body usage
+
+- **Skip the body** for small, self-evident changes (this is the default in
+  this repo's history).
+- **Add a body** when the change is broad, touches multiple areas, or the
+  "why" isn't obvious from the subject. Use a bullet list to enumerate
+  notable changes:
+
+  ```
+  refactor(web): reorganize home page sections
+
+  - extract hero, features, and showcase into separate section components
+  - move shared motion variants to shared/lib/motion.ts
+  - replace inline framer-motion configs with the new variants
+  ```
+
+- Bullets should be short, imperative, and lowercase-leading.
+- Use the body to explain rationale or trade-offs, not to restate the diff.
+
+## Footer (optional)
+
+- `BREAKING CHANGE: <description>` for breaking API/behavior changes.
+- `Refs #123` / `Closes #123` to link issues.
+
+## Good examples (from this repo)
+
+- `feat(puzzle-types): show coming-soon as corner ribbon to keep illustrations visible`
+- `refactor(web/routes): split puzzle paths into /browse and /play`
+- `feat(puzzles): give the four sample puzzles 3x3..6x6 board sizes`
+- `fix(eslint): update tsconfigRootDir to use dirname and fileURLToPath for better path resolution`
+- `chore(deps): add pnpm lockfile`
+
+## Bad examples
+
+- `Update files` — no type, vague subject.
+- `feat: Added new feature.` — capitalized, past tense, trailing period.
+- `fix(web/home/sections/hero): typo` — overly nested scope; use `web/home`.
+- `refactor: lots of changes` — broad change without a body explaining what.

@@ -36,3 +36,4 @@ Cursor based on their frontmatter (`alwaysApply` / `globs`).
 
 - `.cursor/rules/karpathy-guidelines.mdc` — general coding behavior
 - `.cursor/rules/design-system.mdc` — design system enforcement
+- `.cursor/rules/commit-convention.mdc` — conventional commits style for this repo
