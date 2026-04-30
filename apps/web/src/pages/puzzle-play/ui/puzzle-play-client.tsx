@@ -27,7 +27,7 @@ export function PuzzlePlayClient({
   }, [init, image.id, image.size]);
 
   return (
-    <main className="px-4 py-8 sm:py-12">
+    <main className="px-4 pt-4 pb-8 sm:pt-6 sm:pb-12">
       <div className="mx-auto flex flex-col items-center gap-6">
         <PuzzleHud
           preview={preview}

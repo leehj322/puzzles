@@ -17,7 +17,7 @@ export function PuzzleListView({ puzzleType }: { puzzleType: string }) {
   }
 
   return (
-    <main className="px-6 py-12 sm:py-16">
+    <main className="px-6 pt-6 pb-12 sm:pt-8 sm:pb-16">
       <div className="mx-auto max-w-4xl flex flex-col gap-10">
         <header className="flex flex-col gap-4">
           <div>
