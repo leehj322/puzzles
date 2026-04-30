@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/shared/i18n/navigation";
 import { cn } from "@/shared/lib/cn";
 import { fadeUp } from "@/shared/lib/motion";
-import { Badge } from "@/shared/ui/badge";
 import {
   PUZZLE_TYPE_ACCENT,
   PuzzleIllustration,
@@ -25,11 +24,16 @@ export function PuzzleTypeCard({ type }: { type: PuzzleType }) {
       variants={fadeUp}
       whileHover={type.available ? { y: -4 } : undefined}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
-      className={cn(
-        "flex h-full flex-col gap-4 rounded-card border border-border bg-surface p-5 shadow-sm",
-        !type.available && "opacity-80",
-      )}
+      className="relative flex h-full flex-col gap-4 overflow-hidden rounded-card border border-border bg-surface p-5 shadow-sm"
     >
+      {!type.available && (
+        <span
+          aria-label={tCommon("comingSoon")}
+          className="pointer-events-none absolute -right-10 top-5 z-10 w-36 rotate-45 bg-butter py-1 text-center font-sans text-tag font-semibold text-fg shadow-sm"
+        >
+          {tCommon("soon")}
+        </span>
+      )}
       <div
         className={cn(
           "relative flex h-32 items-center justify-center overflow-hidden rounded-media",
@@ -38,14 +42,11 @@ export function PuzzleTypeCard({ type }: { type: PuzzleType }) {
         )}
       >
         <PuzzleIllustration typeId={type.id} />
-        {!type.available && (
-          <span className="absolute right-3 top-3">
-            <Badge tone="muted">{tCommon("comingSoon")}</Badge>
-          </span>
-        )}
       </div>
       <div className="flex flex-1 flex-col gap-2">
-        <h3 className="font-display text-h4 font-semibold">{t(type.nameKey)}</h3>
+        <h3 className="font-display text-h4 font-semibold">
+          {t(type.nameKey)}
+        </h3>
         <p className="font-sans text-small text-fg-muted">{t(type.descKey)}</p>
       </div>
     </motion.article>
