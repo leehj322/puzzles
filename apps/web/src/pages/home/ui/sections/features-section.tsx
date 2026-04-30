@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { LayoutGrid, Trophy, Upload, type LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { fadeUp, stagger, VIEWPORT_ONCE } from "@/shared/lib/motion";
@@ -10,48 +11,11 @@ type FeatureKey = "variety" | "upload" | "ranking";
 const FEATURES: ReadonlyArray<{
   key: FeatureKey;
   accent: string;
-  icon: React.ReactNode;
+  Icon: LucideIcon;
 }> = [
-  {
-    key: "variety",
-    accent: "bg-mint",
-    icon: (
-      <svg viewBox="0 0 48 48" className="h-7 w-7" aria-hidden>
-        <rect x="6" y="6" width="14" height="14" rx="4" fill="currentColor" />
-        <rect x="28" y="6" width="14" height="14" rx="4" fill="currentColor" opacity="0.6" />
-        <rect x="6" y="28" width="14" height="14" rx="4" fill="currentColor" opacity="0.6" />
-        <rect x="28" y="28" width="14" height="14" rx="4" fill="currentColor" />
-      </svg>
-    ),
-  },
-  {
-    key: "upload",
-    accent: "bg-butter",
-    icon: (
-      <svg viewBox="0 0 48 48" className="h-7 w-7" aria-hidden>
-        <rect x="8" y="10" width="32" height="28" rx="5" fill="currentColor" opacity="0.3" />
-        <path
-          d="M24 16v14M18 22l6-6 6 6"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-      </svg>
-    ),
-  },
-  {
-    key: "ranking",
-    accent: "bg-rose",
-    icon: (
-      <svg viewBox="0 0 48 48" className="h-7 w-7" aria-hidden>
-        <rect x="8" y="22" width="9" height="18" rx="2" fill="currentColor" opacity="0.5" />
-        <rect x="19.5" y="12" width="9" height="28" rx="2" fill="currentColor" />
-        <rect x="31" y="28" width="9" height="12" rx="2" fill="currentColor" opacity="0.5" />
-      </svg>
-    ),
-  },
+  { key: "variety", accent: "bg-mint", Icon: LayoutGrid },
+  { key: "upload", accent: "bg-butter", Icon: Upload },
+  { key: "ranking", accent: "bg-rose", Icon: Trophy },
 ];
 
 export function FeaturesSection() {
@@ -93,7 +57,7 @@ export function FeaturesSection() {
               <div
                 className={`flex h-12 w-12 items-center justify-center rounded-icon text-fg ${feature.accent}`}
               >
-                {feature.icon}
+                <feature.Icon aria-hidden className="h-7 w-7" />
               </div>
               <h3 className="font-display text-h4 font-semibold">
                 {t(`items.${feature.key}.title`)}

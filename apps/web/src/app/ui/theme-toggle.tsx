@@ -1,5 +1,6 @@
 "use client";
 
+import { Moon, Sun } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -30,9 +31,15 @@ export function ThemeToggle() {
         "border border-border",
       )}
     >
-      <span aria-hidden className="text-base leading-none">
-        {mounted ? (isDark ? "☼" : "☾") : "·"}
-      </span>
+      {mounted ? (
+        isDark ? (
+          <Sun aria-hidden className="h-4 w-4" />
+        ) : (
+          <Moon aria-hidden className="h-4 w-4" />
+        )
+      ) : (
+        <span aria-hidden className="h-4 w-4" />
+      )}
     </button>
   );
 }

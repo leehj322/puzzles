@@ -243,7 +243,75 @@ Soft, **color-tinted** shadows — never pure `rgba(0,0,0,…)`.
 - Don't put white text on pastel buttons — contrast fails
 - Don't mix Soft Pastel and Candy Kawaii within one surface — pick one tone per page
 
-## 9. Responsive Behavior
+## 9. Icons (lucide-react)
+
+This project uses **`lucide-react`** as the single icon library. It pairs well
+with our rounded, friendly identity (2px stroke, rounded line caps and joins).
+
+### Rules
+
+- **Never** inline ad-hoc SVGs for UI affordances (settings, close, upload,
+  ranking, sun/moon, etc.). Import the matching icon from `lucide-react`.
+- **Never** use unicode glyphs / emoji as icons (e.g. `☼`, `☾`, `★`). Use the
+  `lucide-react` equivalent (`Sun`, `Moon`, `Star`).
+- **Exceptions** (keep custom SVG):
+  - Brand / third-party logos not in lucide (Discord, GitHub variants we want
+    branded, etc.) — `lucide-react` ships only generic glyphs.
+  - Domain illustrations (puzzle pieces, board previews) — these are
+    illustrations, not icons.
+
+### Sizing
+
+Drive size with Tailwind width/height utilities, not the `size` prop, so it
+scales with surrounding text. Default stroke is 2 — keep it.
+
+| Context                   | Size class      | Pixels |
+| ------------------------- | --------------- | ------ |
+| Inline with body text     | `h-4 w-4`       | 16px   |
+| Buttons / nav items       | `h-5 w-5`       | 20px   |
+| Icon button (40×40)       | `h-5 w-5`       | 20px   |
+| Feature card / section    | `h-7 w-7`       | 28px   |
+| Hero / empty-state        | `h-10 w-10`     | 40px   |
+
+Always pass `aria-hidden` when the icon is decorative (text label is present),
+and provide an `aria-label` on the parent button when the icon is the only
+content.
+
+### Color
+
+- Inherit color via `currentColor` — set color on the parent (e.g. `text-fg`,
+  `text-accent-strong`). Don't pass the `color` prop.
+- On colored chips/tiles (e.g. `bg-mint`, `bg-butter`), use `text-fg` for
+  contrast — pastels need dark ink, never white.
+
+### Usage
+
+```tsx
+import { Sun, Moon, Upload, Trophy, LayoutGrid } from "lucide-react";
+
+<button aria-label="Toggle theme" className="...">
+  <Sun aria-hidden className="h-5 w-5" />
+</button>
+```
+
+### Picking the right icon
+
+Prefer **outlined, semantic** glyphs over decorative ones. A few common
+mappings used in this product:
+
+- Theme toggle → `Sun` / `Moon`
+- Upload puzzle → `Upload`
+- Ranking / leaderboard → `Trophy` (or `BarChart3` for stats)
+- Variety / categories → `LayoutGrid`
+- Play → `Play`
+- Settings → `Settings`
+- Close → `X`
+- Search → `Search`
+- Heart / favorite → `Heart`
+
+Browse the full set at <https://lucide.dev/icons/>.
+
+## 10. Responsive Behavior
 
 Use **Tailwind v4 default breakpoints**: `sm 640 / md 768 / lg 1024 / xl 1280 / 2xl 1536`. Do not override them in `globals.css`.
 
@@ -259,7 +327,7 @@ project's `--radius-*` tokens (`rounded-icon/tile/media/button/card/...`) for
 corners. If no token fits, add one to `apps/web/src/app/styles/globals.css`
 under `@theme inline { --radius-* }` rather than inlining a px value.
 
-## 10. Agent Prompt Guide
+## 11. Agent Prompt Guide
 
 ### Quick Color Reference
 
