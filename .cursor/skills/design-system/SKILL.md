@@ -183,15 +183,21 @@ Puzzle pieces, tags, avatars, and category chips **should rotate through the pal
 
 ### Border Radius scale
 
-| Element      | Radius              |
-| ------------ | ------------------- |
-| Tag / Chip   | 9999px (pill)       |
-| Input        | 12px                |
-| Button       | 14px (Pastel) / 16px (Candy) |
-| Icon button  | 12px                |
-| Card         | 20px (Pastel) / 24px (Candy) |
-| Modal / Sheet| 24px                |
-| Puzzle piece | 16px                |
+| Element      | Radius              | Tailwind class    |
+| ------------ | ------------------- | ----------------- |
+| Tag / Chip   | 9999px (pill)       | `rounded-pill`    |
+| Nav item     | 12px                | `rounded-nav`     |
+| Input        | 14px                | `rounded-input`   |
+| Icon button  | 14px                | `rounded-icon`    |
+| Button       | 16px                | `rounded-button`  |
+| Puzzle tile / decorative chip | 16px | `rounded-tile`    |
+| Media frame inside card | 18px      | `rounded-media`   |
+| Card         | 24px                | `rounded-card`    |
+| Modal / Sheet| 28px                | `rounded-modal`   |
+
+**Rule:** Never hardcode `rounded-[Npx]` in JSX. Add a token to
+`apps/web/src/app/styles/globals.css` (`@theme inline { --radius-* }`) and use
+the resulting `rounded-*` class instead.
 
 ### Corner consistency rule
 
@@ -239,11 +245,19 @@ Soft, **color-tinted** shadows — never pure `rgba(0,0,0,…)`.
 
 ## 9. Responsive Behavior
 
-Breakpoints: `480px, 640px, 768px, 1024px, 1280px`
+Use **Tailwind v4 default breakpoints**: `sm 640 / md 768 / lg 1024 / xl 1280 / 2xl 1536`. Do not override them in `globals.css`.
 
 - Mobile-first; tap targets minimum **44×44px**
 - Buttons grow padding on mobile (`14px 22px`)
 - Cards reduce radius slightly on mobile (`20px → 16px`) so they don't look bubble-heavy on small screens
+
+### Sizing rule
+
+Never hardcode arbitrary `max-w-[Npx]` or `rounded-[Npx]`. Use Tailwind's
+default scale (`max-w-xs/sm/md/lg/xl/2xl/3xl/4xl/...`) for widths, and the
+project's `--radius-*` tokens (`rounded-icon/tile/media/button/card/...`) for
+corners. If no token fits, add one to `apps/web/src/app/styles/globals.css`
+under `@theme inline { --radius-* }` rather than inlining a px value.
 
 ## 10. Agent Prompt Guide
 
