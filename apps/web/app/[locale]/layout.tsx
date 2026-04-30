@@ -9,6 +9,8 @@ import {
 } from "next/font/google";
 import { notFound } from "next/navigation";
 
+import { Toaster } from "@puzzles/toast";
+
 import { ThemeProvider } from "@/app/providers/theme-provider";
 import { Header } from "@/app/ui/header";
 
@@ -78,6 +80,7 @@ export default async function LocaleLayout({
           <NextIntlClientProvider>
             <Header />
             {children}
+            <Toaster />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
