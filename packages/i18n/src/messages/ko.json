@@ -1,0 +1,50 @@
+{
+  "common": {
+    "play": "플레이",
+    "back": "뒤로",
+    "comingSoon": "준비 중",
+    "reset": "다시 시작"
+  },
+  "home": {
+    "eyebrow": "PUZZLES",
+    "title": "오늘의 퍼즐",
+    "subtitle": "조각을 맞추며 잠시 머무르세요.",
+    "cta": "퍼즐 시작하기"
+  },
+  "puzzleTypes": {
+    "title": "퍼즐 종류",
+    "subtitle": "원하는 퍼즐을 골라보세요.",
+    "sliding15": {
+      "name": "4×4 슬라이딩 퍼즐",
+      "desc": "조각을 밀어 그림을 완성하세요"
+    },
+    "jigsaw": { "name": "직소 퍼즐", "desc": "준비 중" },
+    "sudoku": { "name": "스도쿠", "desc": "준비 중" },
+    "memory": { "name": "메모리 매칭", "desc": "준비 중" }
+  },
+  "puzzleList": {
+    "title": "퍼즐 선택",
+    "uploadSoon": "곧 직접 이미지를 등록할 수 있어요",
+    "images": {
+      "img1": "퍼즐 1",
+      "img2": "퍼즐 2",
+      "img3": "퍼즐 3",
+      "img4": "퍼즐 4"
+    }
+  },
+  "puzzlePlay": {
+    "moves": "이동",
+    "time": "시간",
+    "preview": "미리보기",
+    "won": "성공!",
+    "wonDesc": "{moves}회 이동 / {time}",
+    "next": "다음 퍼즐",
+    "toList": "목록으로"
+  },
+  "header": {
+    "title": "Puzzles",
+    "lightMode": "라이트 모드",
+    "darkMode": "다크 모드",
+    "language": "언어"
+  }
+}

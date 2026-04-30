@@ -1,0 +1,50 @@
+{
+  "common": {
+    "play": "Play",
+    "back": "Back",
+    "comingSoon": "Coming Soon",
+    "reset": "Reset"
+  },
+  "home": {
+    "eyebrow": "PUZZLES",
+    "title": "Today's puzzle",
+    "subtitle": "Slow down. Slide the pieces into place.",
+    "cta": "Start a puzzle"
+  },
+  "puzzleTypes": {
+    "title": "Puzzle types",
+    "subtitle": "Pick a puzzle to play.",
+    "sliding15": {
+      "name": "4x4 Sliding Puzzle",
+      "desc": "Slide tiles to restore the image"
+    },
+    "jigsaw": { "name": "Jigsaw", "desc": "Coming soon" },
+    "sudoku": { "name": "Sudoku", "desc": "Coming soon" },
+    "memory": { "name": "Memory match", "desc": "Coming soon" }
+  },
+  "puzzleList": {
+    "title": "Choose a puzzle",
+    "uploadSoon": "You'll be able to upload your own images soon",
+    "images": {
+      "img1": "Puzzle 1",
+      "img2": "Puzzle 2",
+      "img3": "Puzzle 3",
+      "img4": "Puzzle 4"
+    }
+  },
+  "puzzlePlay": {
+    "moves": "Moves",
+    "time": "Time",
+    "preview": "Preview",
+    "won": "Solved!",
+    "wonDesc": "{moves} moves · {time}",
+    "next": "Next puzzle",
+    "toList": "Back to list"
+  },
+  "header": {
+    "title": "Puzzles",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "language": "Language"
+  }
+}
