@@ -13,12 +13,12 @@
     "showcase": {
       "eyebrow": "PUZZLES, PLURAL",
       "title": "Many kinds of puzzles, one place",
-      "desc": "Sliding, jigsaw, sudoku, memory match — pick whichever matches your mood today.",
+      "desc": "Sliding, sudoku, nonogram, minesweeper — pick whichever matches your mood today.",
       "kinds": {
         "sliding": "Sliding",
-        "jigsaw": "Jigsaw",
         "sudoku": "Sudoku",
-        "memory": "Memory"
+        "nonogram": "Nonogram",
+        "minesweeper": "Minesweeper"
       }
     },
     "features": {
@@ -27,7 +27,7 @@
       "items": {
         "variety": {
           "title": "Many puzzles",
-          "desc": "Sliding, jigsaw, sudoku, memory match — pick the puzzle that fits your mood."
+          "desc": "Sliding, sudoku, nonogram, minesweeper — pick the puzzle that fits your mood."
         },
         "upload": {
           "title": "Make your own",
@@ -60,9 +60,18 @@
       "name": "4x4 Sliding Puzzle",
       "desc": "Slide tiles to restore the image"
     },
-    "jigsaw": { "name": "Jigsaw", "desc": "Coming soon" },
-    "sudoku": { "name": "Sudoku", "desc": "Coming soon" },
-    "memory": { "name": "Memory match", "desc": "Coming soon" }
+    "sudoku": {
+      "name": "Sudoku",
+      "desc": "Fill the grid following the rules"
+    },
+    "nonogram": {
+      "name": "Nonogram",
+      "desc": "Paint cells from the hints to reveal a picture"
+    },
+    "minesweeper": {
+      "name": "Minesweeper",
+      "desc": "Use number clues to avoid the mines"
+    }
   },
   "puzzleList": {
     "title": "Choose a puzzle",

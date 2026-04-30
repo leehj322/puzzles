@@ -1,4 +1,4 @@
-export type PuzzleTypeId = "sliding-15" | "jigsaw" | "sudoku" | "memory";
+export type PuzzleTypeId = "sliding-15" | "sudoku" | "nonogram" | "minesweeper";
 
 export type PuzzleType = {
   id: PuzzleTypeId;
@@ -15,21 +15,21 @@ export const PUZZLE_TYPES: readonly PuzzleType[] = [
     available: true,
   },
   {
-    id: "jigsaw",
-    nameKey: "puzzleTypes.jigsaw.name",
-    descKey: "puzzleTypes.jigsaw.desc",
-    available: false,
-  },
-  {
     id: "sudoku",
     nameKey: "puzzleTypes.sudoku.name",
     descKey: "puzzleTypes.sudoku.desc",
     available: false,
   },
   {
-    id: "memory",
-    nameKey: "puzzleTypes.memory.name",
-    descKey: "puzzleTypes.memory.desc",
+    id: "nonogram",
+    nameKey: "puzzleTypes.nonogram.name",
+    descKey: "puzzleTypes.nonogram.desc",
+    available: false,
+  },
+  {
+    id: "minesweeper",
+    nameKey: "puzzleTypes.minesweeper.name",
+    descKey: "puzzleTypes.minesweeper.desc",
     available: false,
   },
 ] as const;

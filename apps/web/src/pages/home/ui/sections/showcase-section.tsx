@@ -5,17 +5,17 @@ import { useTranslations } from "next-intl";
 
 import { fadeUp, stagger, VIEWPORT_ONCE } from "@/shared/lib/motion";
 import {
-  JigsawIllustration,
-  MemoryIllustration,
+  MinesweeperIllustration,
+  NonogramIllustration,
   SlidingIllustration,
   SudokuIllustration,
 } from "@/shared/ui/puzzle-illustration";
 
 const KINDS = [
   { key: "sliding" as const, accent: "bg-mint", Demo: SlidingIllustration },
-  { key: "jigsaw" as const, accent: "bg-peach", Demo: JigsawIllustration },
   { key: "sudoku" as const, accent: "bg-sky", Demo: SudokuIllustration },
-  { key: "memory" as const, accent: "bg-butter", Demo: MemoryIllustration },
+  { key: "nonogram" as const, accent: "bg-peach", Demo: NonogramIllustration },
+  { key: "minesweeper" as const, accent: "bg-butter", Demo: MinesweeperIllustration },
 ];
 
 export function ShowcaseSection() {
