@@ -4,6 +4,7 @@ import { Link } from "@/shared/i18n/navigation";
 
 import { BackButton } from "./back-button";
 import { LocaleSwitcher } from "./locale-switcher";
+import { LogoMark } from "./logo-mark";
 import { ThemeToggle } from "./theme-toggle";
 
 export function Header() {
@@ -14,8 +15,9 @@ export function Header() {
         <div className="mx-auto max-w-4xl px-6 h-14 flex items-center justify-between gap-4">
           <Link
             href="/"
-            className="font-sans text-ui hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 font-display text-h4 font-semibold hover:opacity-80 transition-opacity"
           >
+            <LogoMark className="h-7 w-7" />
             {t("title")}
           </Link>
           <div className="flex items-center gap-3">
