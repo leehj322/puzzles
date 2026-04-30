@@ -1,4 +1,4 @@
-export type PuzzleTypeId = "sliding-15" | "sudoku" | "nonogram" | "minesweeper";
+export type PuzzleTypeId = "sliding" | "sudoku" | "nonogram" | "minesweeper";
 
 export type PuzzleType = {
   id: PuzzleTypeId;
@@ -9,9 +9,9 @@ export type PuzzleType = {
 
 export const PUZZLE_TYPES: readonly PuzzleType[] = [
   {
-    id: "sliding-15",
-    nameKey: "puzzleTypes.sliding15.name",
-    descKey: "puzzleTypes.sliding15.desc",
+    id: "sliding",
+    nameKey: "puzzleTypes.sliding.name",
+    descKey: "puzzleTypes.sliding.desc",
     available: true,
   },
   {

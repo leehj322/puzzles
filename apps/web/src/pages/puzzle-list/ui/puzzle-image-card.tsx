@@ -5,6 +5,7 @@ import Image from "next/image";
 import { type PuzzleImage } from "@puzzles/core";
 
 import { Link } from "@/shared/i18n/navigation";
+import { Badge } from "@/shared/ui/badge";
 
 export function PuzzleImageCard({
   puzzleType,
@@ -30,6 +31,9 @@ export function PuzzleImageCard({
             className="object-cover"
             unoptimized
           />
+          <span className="absolute right-3 top-3">
+            <Badge tone="neutral">{`${image.size}×${image.size}`}</Badge>
+          </span>
         </div>
         <div className="px-4 py-3">
           <h3 className="font-sans text-body">{t(image.titleKey)}</h3>

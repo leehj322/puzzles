@@ -290,14 +290,14 @@ export function MinesweeperIllustration() {
 }
 
 export const PUZZLE_TYPE_ACCENT: Record<PuzzleTypeId, string> = {
-  "sliding-15": "bg-mint",
+  sliding: "bg-mint",
   sudoku: "bg-sky",
   nonogram: "bg-peach",
   minesweeper: "bg-butter",
 };
 
 const ILLUSTRATIONS: Record<PuzzleTypeId, () => React.ReactElement> = {
-  "sliding-15": SlidingIllustration,
+  sliding: SlidingIllustration,
   sudoku: SudokuIllustration,
   nonogram: NonogramIllustration,
   minesweeper: MinesweeperIllustration,

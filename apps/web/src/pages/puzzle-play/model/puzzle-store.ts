@@ -20,7 +20,7 @@ interface PuzzleState {
   moves: number;
   startedAt: number | null;
   finishedAt: number | null;
-  init: (imageId: string) => void;
+  init: (imageId: string, size: number) => void;
   reset: () => void;
   moveTile: (index: number) => void;
   moveDirection: (dir: Direction) => void;
@@ -48,10 +48,10 @@ export const usePuzzleStore = create<PuzzleState>((set, get) => ({
   startedAt: null,
   finishedAt: null,
 
-  init: (imageId) => {
+  init: (imageId, size) => {
     set({
       imageId,
-      board: shuffleSolvable(DEFAULT_SIZE),
+      board: shuffleSolvable(size),
       moves: 0,
       startedAt: null,
       finishedAt: null,

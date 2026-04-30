@@ -56,8 +56,8 @@
   "puzzleTypes": {
     "title": "퍼즐 종류",
     "subtitle": "원하는 퍼즐을 골라보세요.",
-    "sliding15": {
-      "name": "4×4 슬라이딩 퍼즐",
+    "sliding": {
+      "name": "슬라이드 퍼즐",
       "desc": "조각을 밀어 그림을 완성하세요"
     },
     "sudoku": {

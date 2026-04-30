@@ -56,8 +56,8 @@
   "puzzleTypes": {
     "title": "Puzzle types",
     "subtitle": "Pick a puzzle to play.",
-    "sliding15": {
-      "name": "4x4 Sliding Puzzle",
+    "sliding": {
+      "name": "Sliding Puzzle",
       "desc": "Slide tiles to restore the image"
     },
     "sudoku": {

@@ -2,16 +2,18 @@ export type PuzzleImage = {
   id: string;
   titleKey: string;
   src: string;
+  size: number;
 };
 
-const SLIDING_15: readonly PuzzleImage[] = [1, 2, 3, 4].map((i) => ({
-  id: `img-${i}`,
-  titleKey: `puzzleList.images.img${i}`,
-  src: `https://picsum.photos/seed/puzzles-${i}/1024`,
-}));
+const SLIDING: readonly PuzzleImage[] = [
+  { id: "img-1", titleKey: "puzzleList.images.img1", src: "https://picsum.photos/seed/puzzles-1/1024", size: 3 },
+  { id: "img-2", titleKey: "puzzleList.images.img2", src: "https://picsum.photos/seed/puzzles-2/1024", size: 4 },
+  { id: "img-3", titleKey: "puzzleList.images.img3", src: "https://picsum.photos/seed/puzzles-3/1024", size: 5 },
+  { id: "img-4", titleKey: "puzzleList.images.img4", src: "https://picsum.photos/seed/puzzles-4/1024", size: 6 },
+];
 
 const PUZZLE_IMAGES_BY_TYPE: Record<string, readonly PuzzleImage[]> = {
-  "sliding-15": SLIDING_15,
+  sliding: SLIDING,
 };
 
 export const getPuzzleImages = (

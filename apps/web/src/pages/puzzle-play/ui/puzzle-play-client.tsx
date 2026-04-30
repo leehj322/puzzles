@@ -23,8 +23,8 @@ export function PuzzlePlayClient({
   const [preview, setPreview] = useState(false);
 
   useEffect(() => {
-    init(image.id);
-  }, [init, image.id]);
+    init(image.id, image.size);
+  }, [init, image.id, image.size]);
 
   return (
     <main className="px-4 py-8 sm:py-12">
