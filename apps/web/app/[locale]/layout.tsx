@@ -1,7 +1,12 @@
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
-import { Quicksand, Fredoka } from "next/font/google";
+import {
+  Quicksand,
+  Fredoka,
+  IBM_Plex_Sans_KR,
+  Sunflower,
+} from "next/font/google";
 import { notFound } from "next/navigation";
 
 import { ThemeProvider } from "@/app/providers/theme-provider";
@@ -23,6 +28,19 @@ const fredoka = Fredoka({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-fredoka",
+  display: "swap",
+});
+
+const ibmPlexSansKr = IBM_Plex_Sans_KR({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex-kr",
+  display: "swap",
+});
+
+const sunflower = Sunflower({
+  weight: ["500", "700"],
+  variable: "--font-sunflower",
   display: "swap",
 });
 
@@ -52,7 +70,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${quicksand.variable} ${fredoka.variable}`}
+      className={`${quicksand.variable} ${fredoka.variable} ${ibmPlexSansKr.variable} ${sunflower.variable}`}
       suppressHydrationWarning
     >
       <body>

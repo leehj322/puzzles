@@ -44,10 +44,12 @@
   --shadow-key-hover: var(--shadow-key-hover);
 
   --font-sans:
-    var(--font-quicksand), ui-rounded, "SF Pro Rounded", system-ui,
-    -apple-system, sans-serif;
+    var(--font-quicksand), var(--font-ibm-plex-kr), ui-rounded,
+    "SF Pro Rounded", "Apple SD Gothic Neo", system-ui, -apple-system,
+    sans-serif;
   --font-display:
-    var(--font-fredoka), ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+    var(--font-fredoka), var(--font-sunflower), ui-rounded, "SF Pro Rounded",
+    "Apple SD Gothic Neo", system-ui, sans-serif;
   --font-mono:
     "JetBrains Mono", "DM Mono", ui-monospace, "SFMono-Regular", monospace;
   --font-serif: var(--font-display);
