@@ -9,7 +9,7 @@ export function Header() {
   const t = useTranslations("header");
   return (
     <header className="border-b border-border bg-bg">
-      <div className="mx-auto max-w-[896px] px-6 h-14 flex items-center justify-between gap-4">
+      <div className="mx-auto max-w-4xl px-6 h-14 flex items-center justify-between gap-4">
         <Link
           href="/"
           className="font-sans text-ui hover:opacity-80 transition-opacity"
