@@ -9,7 +9,49 @@
     "eyebrow": "PUZZLES",
     "title": "Today's puzzle",
     "subtitle": "Slow down. Slide the pieces into place.",
-    "cta": "Start a puzzle"
+    "cta": "Start a puzzle",
+    "showcase": {
+      "eyebrow": "PUZZLES, PLURAL",
+      "title": "Many kinds of puzzles, one place",
+      "desc": "Sliding, jigsaw, sudoku, memory match — pick whichever matches your mood today.",
+      "kinds": {
+        "sliding": "Sliding",
+        "jigsaw": "Jigsaw",
+        "sudoku": "Sudoku",
+        "memory": "Memory"
+      }
+    },
+    "features": {
+      "eyebrow": "WHY PUZZLES",
+      "title": "A calm place to play, every day",
+      "items": {
+        "variety": {
+          "title": "Many puzzles",
+          "desc": "Sliding, jigsaw, sudoku, memory match — pick the puzzle that fits your mood."
+        },
+        "upload": {
+          "title": "Make your own",
+          "desc": "Upload your own image and turn it into a puzzle for everyone else to play."
+        },
+        "ranking": {
+          "title": "Climb the leaderboard",
+          "desc": "Race for the fewest moves and fastest time. The board refreshes every day."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Ready? Slide your first tile.",
+      "desc": "No sign-up needed. Just start playing.",
+      "button": "Start a puzzle"
+    },
+    "footer": {
+      "tagline": "Slow down. Slide the pieces into place.",
+      "communityTitle": "Community",
+      "discord": "Join Discord",
+      "contactTitle": "Contact",
+      "contact": "Send an email",
+      "rights": "© 2026 Puzzles. All rights reserved."
+    }
   },
   "puzzleTypes": {
     "title": "Puzzle types",
