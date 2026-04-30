@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "puzzles",
+    "slug": "puzzles",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "puzzles",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.puzzles.app"
+    },
+    "android": {
+      "package": "com.puzzles.app"
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true,
+      "tsconfigPaths": true
+    }
+  }
+}
