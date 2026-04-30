@@ -1,0 +1,39 @@
+/*
+ * Design tokens. Light values follow .cursor/DESIGN.md §2.
+ * Dark values are a "warm dark" hypothesis (DESIGN.md does not specify dark mode);
+ * keep all theme overrides in this file so they can be replaced in one place.
+ */
+
+:root {
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --surface-warm: #faf9f6;
+  --border: #dedbd6;
+  --border-strong: #d3cec6;
+
+  --fg: #111111;
+  --fg-muted: #7b7b78;
+  --fg-subtle: #9c9fa5;
+
+  --accent: #ff5600;
+  --accent-fg: #ffffff;
+
+  --active: #2c6415;
+}
+
+[data-theme="dark"] {
+  --bg: #111111;
+  --surface: #1a1a19;
+  --surface-warm: #1f1e1c;
+  --border: #2e2c28;
+  --border-strong: #3a3833;
+
+  --fg: #faf9f6;
+  --fg-muted: #a8a6a1;
+  --fg-subtle: #7b7b78;
+
+  --accent: #ff5600;
+  --accent-fg: #ffffff;
+
+  --active: #4caa2c;
+}

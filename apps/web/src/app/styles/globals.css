@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-warm: var(--surface-warm);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-active: var(--active);
+
+  --radius-button: 4px;
+  --radius-nav: 6px;
+  --radius-card: 8px;
+
+  --font-sans: "Saans", "Saans Fallback", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Serrif", "Serrif Fallback", ui-serif, Georgia, serif;
+  --font-mono: "SaansMono", "SaansMono Fallback", ui-monospace, "SFMono-Regular", monospace;
+
+  --text-display: 80px;
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -2.4px;
+
+  --text-h1: 54px;
+  --text-h1--line-height: 1;
+  --text-h1--letter-spacing: -1.6px;
+
+  --text-h2: 40px;
+  --text-h2--line-height: 1;
+  --text-h2--letter-spacing: -1.2px;
+
+  --text-h3: 32px;
+  --text-h3--line-height: 1;
+  --text-h3--letter-spacing: -0.96px;
+
+  --text-h4: 24px;
+  --text-h4--line-height: 1;
+  --text-h4--letter-spacing: -0.48px;
+
+  --text-lead: 20px;
+  --text-lead--line-height: 0.95;
+  --text-lead--letter-spacing: -0.2px;
+
+  --text-ui: 18px;
+  --text-ui--line-height: 1;
+
+  --text-body: 16px;
+  --text-body--line-height: 1.5;
+
+  --text-small: 14px;
+  --text-small--line-height: 1.4;
+
+  --text-mono: 12px;
+  --text-mono--line-height: 1.1;
+  --text-mono--letter-spacing: 0.6px;
+
+  --breakpoint-xs: 425px;
+  --breakpoint-sm: 530px;
+  --breakpoint-md: 600px;
+  --breakpoint-lg: 640px;
+  --breakpoint-xl: 768px;
+  --breakpoint-2xl: 896px;
+
+  --ease-out-puzzle: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *,
+  *::before,
+  *::after {
+    border-color: var(--border);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
