@@ -7,10 +7,12 @@ import {
   move,
   moveByDirection,
   shuffleSolvable,
-  SOLVED,
+  solvedBoard,
   type Board,
   type Direction,
 } from "@puzzles/core";
+
+const DEFAULT_SIZE = 4;
 
 interface PuzzleState {
   imageId: string | null;
@@ -41,7 +43,7 @@ const applyNext = (
 
 export const usePuzzleStore = create<PuzzleState>((set, get) => ({
   imageId: null,
-  board: SOLVED,
+  board: solvedBoard(DEFAULT_SIZE),
   moves: 0,
   startedAt: null,
   finishedAt: null,
@@ -49,7 +51,7 @@ export const usePuzzleStore = create<PuzzleState>((set, get) => ({
   init: (imageId) => {
     set({
       imageId,
-      board: shuffleSolvable(),
+      board: shuffleSolvable(DEFAULT_SIZE),
       moves: 0,
       startedAt: null,
       finishedAt: null,
@@ -57,8 +59,9 @@ export const usePuzzleStore = create<PuzzleState>((set, get) => ({
   },
 
   reset: () => {
+    const size = get().board.size;
     set({
-      board: shuffleSolvable(),
+      board: shuffleSolvable(size),
       moves: 0,
       startedAt: null,
       finishedAt: null,

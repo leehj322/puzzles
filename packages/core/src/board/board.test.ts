@@ -1,115 +1,140 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  BOARD_SIZE,
   isSolved,
   move,
   moveByDirection,
   shuffleSolvable,
-  SOLVED,
-  TILE_COUNT,
+  solvedBoard,
   tileBackgroundPosition,
   type Board,
   type Direction,
   type Tile,
 } from "./board";
 
+const expectedTiles = (size: number): Tile[] => {
+  const count = size * size;
+  const out: Tile[] = new Array(count);
+  for (let i = 0; i < count - 1; i++) out[i] = i + 1;
+  out[count - 1] = null;
+  return out;
+};
+
+describe("solvedBoard", () => {
+  it.each([3, 4, 5, 6])("produces a solved board of size %i", (size) => {
+    const board = solvedBoard(size);
+    expect(board.size).toBe(size);
+    expect(board.tiles).toEqual(expectedTiles(size));
+  });
+
+  it("rejects invalid sizes", () => {
+    expect(() => solvedBoard(1)).toThrow();
+    expect(() => solvedBoard(0)).toThrow();
+    expect(() => solvedBoard(-1)).toThrow();
+    expect(() => solvedBoard(2.5)).toThrow();
+  });
+});
+
 describe("isSolved", () => {
-  it("returns true for the SOLVED board", () => {
-    expect(isSolved(SOLVED)).toBe(true);
+  it.each([3, 4, 5, 6])("returns true for the solved board (size %i)", (size) => {
+    expect(isSolved(solvedBoard(size))).toBe(true);
   });
 
   it("returns false when tiles are out of place", () => {
-    const swapped: Tile[] = [...SOLVED];
-    [swapped[0], swapped[1]] = [swapped[1], swapped[0]];
-    expect(isSolved(swapped)).toBe(false);
+    const solved = solvedBoard(4);
+    const tiles: Tile[] = [...solved.tiles];
+    [tiles[0], tiles[1]] = [tiles[1], tiles[0]];
+    expect(isSolved({ tiles, size: 4 })).toBe(false);
   });
 
-  it("returns false for a board of the wrong length", () => {
-    expect(isSolved([1, 2, 3, null] as Board)).toBe(false);
+  it("returns false for tiles array of the wrong length", () => {
+    const board: Board = { tiles: [1, 2, 3, null], size: 4 };
+    expect(isSolved(board)).toBe(false);
   });
 });
 
 describe("move", () => {
-  it("swaps a tile with the adjacent blank", () => {
-    // SOLVED has blank at index 15, tile at index 14 is 15
-    const next = move(SOLVED, 14);
+  it("swaps a tile with the adjacent blank (size 4)", () => {
+    const solved = solvedBoard(4);
+    const next = move(solved, 14);
     expect(next).not.toBeNull();
-    expect(next![14]).toBeNull();
-    expect(next![15]).toBe(15);
+    expect(next!.tiles[14]).toBeNull();
+    expect(next!.tiles[15]).toBe(15);
+  });
+
+  it("works on a 3x3 board", () => {
+    const solved = solvedBoard(3);
+    // blank at index 8, tile 8 at index 7 → moving idx 7 swaps them
+    const next = move(solved, 7);
+    expect(next).not.toBeNull();
+    expect(next!.tiles[7]).toBeNull();
+    expect(next!.tiles[8]).toBe(8);
   });
 
   it("returns null when the tile is not adjacent to the blank", () => {
-    expect(move(SOLVED, 0)).toBeNull();
+    expect(move(solvedBoard(4), 0)).toBeNull();
   });
 
   it("returns null when clicking the blank itself", () => {
-    expect(move(SOLVED, 15)).toBeNull();
+    expect(move(solvedBoard(4), 15)).toBeNull();
   });
 
   it("returns null for out-of-range indices", () => {
-    expect(move(SOLVED, -1)).toBeNull();
-    expect(move(SOLVED, 16)).toBeNull();
+    expect(move(solvedBoard(4), -1)).toBeNull();
+    expect(move(solvedBoard(4), 16)).toBeNull();
   });
 });
 
 describe("moveByDirection", () => {
   it("returns null when the blank is at the bottom-right and moving 'up' or 'left'", () => {
-    expect(moveByDirection(SOLVED, "up")).toBeNull();
-    expect(moveByDirection(SOLVED, "left")).toBeNull();
+    const solved = solvedBoard(4);
+    expect(moveByDirection(solved, "up")).toBeNull();
+    expect(moveByDirection(solved, "left")).toBeNull();
   });
 
-  it("'down' from solved slides tile 12 down into the blank", () => {
-    const next = moveByDirection(SOLVED, "down");
+  it("'down' from solved slides the tile above the blank down (size 4)", () => {
+    const next = moveByDirection(solvedBoard(4), "down");
     expect(next).not.toBeNull();
-    // Tile 12 was at index 11 (row 2, col 3); after sliding down, it sits at 15
-    expect(next![15]).toBe(12);
-    expect(next![11]).toBeNull();
+    expect(next!.tiles[15]).toBe(12);
+    expect(next!.tiles[11]).toBeNull();
   });
 
-  it("'right' from solved slides tile 15 right into the blank", () => {
-    const next = moveByDirection(SOLVED, "right");
+  it("'right' from solved slides the tile left of the blank right (size 4)", () => {
+    const next = moveByDirection(solvedBoard(4), "right");
     expect(next).not.toBeNull();
-    expect(next![15]).toBe(15);
-    expect(next![14]).toBeNull();
+    expect(next!.tiles[15]).toBe(15);
+    expect(next!.tiles[14]).toBeNull();
   });
 
-  it("all four directions return null when no move is possible", () => {
-    // Construct a board where blank is in the corner where 'down' and 'right' are blocked too
-    // The solved board has blank at bottom-right corner: down (no row above blocks?) actually
-    // with blank at index 15: row=3,col=3. 'up' requires row<3 (false). 'down' requires row>0 (true).
-    // 'left' requires col<3 (false). 'right' requires col>0 (true).
-    // So we test the boundary cases per direction explicitly.
+  it("works on size 3 — 'down' slides tile from index 5 to index 8", () => {
+    const next = moveByDirection(solvedBoard(3), "down");
+    expect(next).not.toBeNull();
+    expect(next!.tiles[8]).toBe(6);
+    expect(next!.tiles[5]).toBeNull();
+  });
+
+  it("never throws for any direction on the solved board (size 5)", () => {
     const directions: Direction[] = ["up", "down", "left", "right"];
+    const solved = solvedBoard(5);
     for (const dir of directions) {
-      // We just confirm the function never throws and returns Board|null
-      const result = moveByDirection(SOLVED, dir);
-      expect(result === null || result.length === TILE_COUNT).toBe(true);
+      const result = moveByDirection(solved, dir);
+      expect(result === null || result.tiles.length === 25).toBe(true);
     }
   });
 });
 
 describe("shuffleSolvable", () => {
-  it("produces a solvable board (not equal to SOLVED)", () => {
-    const board = shuffleSolvable();
-    expect(board).toHaveLength(TILE_COUNT);
+  it.each([3, 4, 5, 6])("produces a non-solved board (size %i)", (size) => {
+    const board = shuffleSolvable(size);
+    expect(board.size).toBe(size);
+    expect(board.tiles).toHaveLength(size * size);
     expect(isSolved(board)).toBe(false);
-    // Contains exactly tiles 1..15 and one null
-    const sorted = [...board].sort((a, b) => {
-      if (a === null) return 1;
-      if (b === null) return -1;
-      return a - b;
-    });
-    expect(sorted.slice(0, 15)).toEqual([
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-    ]);
-    expect(sorted[15]).toBeNull();
   });
 
-  it("1000 shuffles all preserve the tile multiset", () => {
+  it("preserves the tile multiset across many shuffles (size 4)", () => {
     for (let i = 0; i < 1000; i++) {
-      const board = shuffleSolvable();
-      const sorted = [...board].sort((a, b) => {
+      const board = shuffleSolvable(4);
+      const sorted = [...board.tiles].sort((a, b) => {
         if (a === null) return 1;
         if (b === null) return -1;
         return a - b;
@@ -122,33 +147,35 @@ describe("shuffleSolvable", () => {
   });
 
   it("respects the steps parameter (steps=0 with defensive bump still differs)", () => {
-    // With steps=0 the algorithm performs a defensive single move because
-    // the result equals SOLVED. So result must NOT be solved.
-    const board = shuffleSolvable(0);
+    const board = shuffleSolvable(4, 0);
     expect(isSolved(board)).toBe(false);
   });
 });
 
 describe("tileBackgroundPosition", () => {
-  it("tile 1 maps to top-left (0%, 0%)", () => {
-    expect(tileBackgroundPosition(1)).toEqual({ x: "0%", y: "0%" });
+  it("tile 1 maps to top-left (0%, 0%) for any size", () => {
+    expect(tileBackgroundPosition(1, 3)).toEqual({ x: "0%", y: "0%" });
+    expect(tileBackgroundPosition(1, 4)).toEqual({ x: "0%", y: "0%" });
+    expect(tileBackgroundPosition(1, 6)).toEqual({ x: "0%", y: "0%" });
   });
 
-  it("tile 4 (top-right of solved) maps to (100%, 0%)", () => {
-    const pos = tileBackgroundPosition(4);
-    expect(pos.y).toBe("0%");
-    expect(pos.x).toBe("100%");
+  it("the top-right tile maps to (100%, 0%)", () => {
+    // size 4 top-right is tile 4; size 6 top-right is tile 6
+    expect(tileBackgroundPosition(4, 4)).toEqual({ x: "100%", y: "0%" });
+    expect(tileBackgroundPosition(6, 6)).toEqual({ x: "100%", y: "0%" });
   });
 
-  it("tile 13 (bottom-left of solved) maps to (0%, 100%)", () => {
-    const pos = tileBackgroundPosition(13);
-    expect(pos.x).toBe("0%");
-    expect(pos.y).toBe("100%");
+  it("the bottom-left tile maps to (0%, 100%)", () => {
+    // size 4: tile 13 is at row 3 col 0; size 3: tile 7 is at row 2 col 0
+    expect(tileBackgroundPosition(13, 4)).toEqual({ x: "0%", y: "100%" });
+    expect(tileBackgroundPosition(7, 3)).toEqual({ x: "0%", y: "100%" });
   });
 
-  it("step is 100/(BOARD_SIZE-1) so corner tiles span 0% .. 100%", () => {
-    const step = 100 / (BOARD_SIZE - 1);
-    expect(tileBackgroundPosition(2).x).toBe(`${step}%`);
-    expect(tileBackgroundPosition(5).y).toBe(`${step}%`);
+  it("step is 100/(size-1) so adjacent tiles span one step", () => {
+    const step4 = 100 / 3;
+    expect(tileBackgroundPosition(2, 4).x).toBe(`${step4}%`);
+    expect(tileBackgroundPosition(5, 4).y).toBe(`${step4}%`);
+    const step6 = 100 / 5;
+    expect(tileBackgroundPosition(2, 6).x).toBe(`${step6}%`);
   });
 });

@@ -42,13 +42,17 @@ export function PuzzleBoard({
       <div
         role="grid"
         aria-label={t("preview") + ": " + imageAlt}
-        className="grid grid-cols-4 gap-1 p-1 bg-fg/5 dark:bg-fg/10 rounded-card"
+        className="grid gap-1 p-1 bg-fg/5 dark:bg-fg/10 rounded-card"
+        style={{
+          gridTemplateColumns: `repeat(${board.size}, minmax(0, 1fr))`,
+        }}
       >
-        {board.map((tile, index) => (
+        {board.tiles.map((tile, index) => (
           <PuzzleTile
             key={index}
             tile={tile}
             index={index}
+            size={board.size}
             imageSrc={imageSrc}
             onActivate={moveTile}
           />

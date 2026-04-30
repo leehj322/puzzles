@@ -1,7 +1,5 @@
 export {
-  BOARD_SIZE,
-  TILE_COUNT,
-  SOLVED,
+  solvedBoard,
   isSolved,
   move,
   moveByDirection,

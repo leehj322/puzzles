@@ -1,63 +1,74 @@
 /*
- * 4x4 sliding puzzle (15-puzzle) pure logic.
+ * Sliding puzzle pure logic, size-agnostic (3x3 .. NxN).
  *
- * Board representation: 16-length array. Indices 0..15 map to positions
- * (row, col) where row = floor(idx / 4), col = idx % 4.
- * Each cell holds a tile number (1..15) or null (the blank cell).
- * The solved state has tiles 1..15 in order with the blank at the last
- * position (index 15).
+ * Board representation: an immutable record of `tiles` and `size`. The
+ * tiles array has length size*size; index i maps to (row, col) where
+ * row = floor(i / size) and col = i % size. Each cell holds a tile
+ * number (1..size*size - 1) or null (the blank cell). The solved state
+ * has tiles in order with the blank at the last position.
  *
- * Solvability is guaranteed by generating shuffled boards via random legal
- * moves starting from the solved state — this is simpler and more reliable
+ * Solvability is guaranteed by generating shuffled boards via random
+ * legal moves starting from the solved state — simpler and more reliable
  * than computing inversion parity.
  */
 
 export type Tile = number | null;
-export type Board = readonly Tile[];
 export type Direction = "up" | "down" | "left" | "right";
 
-export const BOARD_SIZE = 4;
-export const TILE_COUNT = BOARD_SIZE * BOARD_SIZE;
-
-export const SOLVED: Board = Object.freeze([
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, null,
-]);
+export type Board = {
+  readonly tiles: readonly Tile[];
+  readonly size: number;
+};
 
 const DEFAULT_SHUFFLE_STEPS = 200;
 
-const rowOf = (index: number): number => Math.floor(index / BOARD_SIZE);
+const rowOf = (index: number, size: number): number => Math.floor(index / size);
 
-const colOf = (index: number): number => index % BOARD_SIZE;
+const colOf = (index: number, size: number): number => index % size;
 
 const blankIndex = (board: Board): number => {
-  const idx = board.indexOf(null);
+  const idx = board.tiles.indexOf(null);
   if (idx === -1) {
     throw new Error("invariant: board has no blank tile");
   }
   return idx;
 };
 
-const areAdjacent = (a: number, b: number): boolean => {
-  const ar = rowOf(a);
-  const ac = colOf(a);
-  const br = rowOf(b);
-  const bc = colOf(b);
+const areAdjacent = (a: number, b: number, size: number): boolean => {
+  const ar = rowOf(a, size);
+  const ac = colOf(a, size);
+  const br = rowOf(b, size);
+  const bc = colOf(b, size);
   return Math.abs(ar - br) + Math.abs(ac - bc) === 1;
 };
 
 const swap = (board: Board, i: number, j: number): Board => {
-  const next = board.slice();
+  const next = board.tiles.slice();
   [next[i], next[j]] = [next[j], next[i]];
-  return next;
+  return { tiles: next, size: board.size };
+};
+
+/** Returns the solved board for the given size (3..N). */
+export const solvedBoard = (size: number): Board => {
+  if (!Number.isInteger(size) || size < 2) {
+    throw new Error(`invalid board size: ${size}`);
+  }
+  const count = size * size;
+  const tiles: Tile[] = new Array(count);
+  for (let i = 0; i < count - 1; i++) tiles[i] = i + 1;
+  tiles[count - 1] = null;
+  return { tiles, size };
 };
 
 /** Returns true if the board is in the solved configuration. */
 export const isSolved = (board: Board): boolean => {
-  if (board.length !== TILE_COUNT) return false;
-  for (let i = 0; i < TILE_COUNT; i++) {
-    if (board[i] !== SOLVED[i]) return false;
+  const { tiles, size } = board;
+  const count = size * size;
+  if (tiles.length !== count) return false;
+  for (let i = 0; i < count - 1; i++) {
+    if (tiles[i] !== i + 1) return false;
   }
-  return true;
+  return tiles[count - 1] === null;
 };
 
 /**
@@ -65,10 +76,11 @@ export const isSolved = (board: Board): boolean => {
  * or `null` if the move is not legal (the tile is not adjacent to the blank).
  */
 export const move = (board: Board, tileIndex: number): Board | null => {
-  if (tileIndex < 0 || tileIndex >= TILE_COUNT) return null;
-  if (board[tileIndex] === null) return null;
+  const count = board.size * board.size;
+  if (tileIndex < 0 || tileIndex >= count) return null;
+  if (board.tiles[tileIndex] === null) return null;
   const blank = blankIndex(board);
-  if (!areAdjacent(tileIndex, blank)) return null;
+  if (!areAdjacent(tileIndex, blank, board.size)) return null;
   return swap(board, tileIndex, blank);
 };
 
@@ -81,22 +93,23 @@ export const moveByDirection = (
   board: Board,
   direction: Direction,
 ): Board | null => {
+  const { size } = board;
   const blank = blankIndex(board);
-  const r = rowOf(blank);
-  const c = colOf(blank);
+  const r = rowOf(blank, size);
+  const c = colOf(blank, size);
 
   let tileIndex: number;
   switch (direction) {
     case "up":
-      if (r === BOARD_SIZE - 1) return null;
-      tileIndex = blank + BOARD_SIZE;
+      if (r === size - 1) return null;
+      tileIndex = blank + size;
       break;
     case "down":
       if (r === 0) return null;
-      tileIndex = blank - BOARD_SIZE;
+      tileIndex = blank - size;
       break;
     case "left":
-      if (c === BOARD_SIZE - 1) return null;
+      if (c === size - 1) return null;
       tileIndex = blank + 1;
       break;
     case "right":
@@ -107,14 +120,14 @@ export const moveByDirection = (
   return swap(board, tileIndex, blank);
 };
 
-const neighborsOf = (index: number): number[] => {
-  const r = rowOf(index);
-  const c = colOf(index);
+const neighborsOf = (index: number, size: number): number[] => {
+  const r = rowOf(index, size);
+  const c = colOf(index, size);
   const out: number[] = [];
-  if (r > 0) out.push(index - BOARD_SIZE);
-  if (r < BOARD_SIZE - 1) out.push(index + BOARD_SIZE);
+  if (r > 0) out.push(index - size);
+  if (r < size - 1) out.push(index + size);
   if (c > 0) out.push(index - 1);
-  if (c < BOARD_SIZE - 1) out.push(index + 1);
+  if (c < size - 1) out.push(index + 1);
   return out;
 };
 
@@ -125,14 +138,15 @@ const neighborsOf = (index: number): number[] => {
  * solved.
  */
 export const shuffleSolvable = (
+  size: number,
   steps: number = DEFAULT_SHUFFLE_STEPS,
 ): Board => {
-  let board: Board = SOLVED.slice();
+  let board = solvedBoard(size);
   let blank = blankIndex(board);
   let prevBlank = -1;
 
   for (let i = 0; i < steps; i++) {
-    const candidates = neighborsOf(blank).filter((n) => n !== prevBlank);
+    const candidates = neighborsOf(blank, size).filter((n) => n !== prevBlank);
     const tileIndex = candidates[Math.floor(Math.random() * candidates.length)];
     board = swap(board, blank, tileIndex);
     prevBlank = blank;
@@ -142,7 +156,7 @@ export const shuffleSolvable = (
   // Defensive: extremely unlikely, but if random walk lands back on solved,
   // do one more step to ensure the player has something to solve.
   if (isSolved(board)) {
-    const candidates = neighborsOf(blank).filter((n) => n !== prevBlank);
+    const candidates = neighborsOf(blank, size).filter((n) => n !== prevBlank);
     const tileIndex = candidates[0];
     board = swap(board, blank, tileIndex);
   }
@@ -151,19 +165,21 @@ export const shuffleSolvable = (
 };
 
 /**
- * Returns the CSS background-position for the given tile number, assuming
- * the tile renders the original image with `background-size: 400% 400%`.
- * Tile numbers are 1..15. Tile N occupies the (row, col) the solved board
- * places it at, so the image slice matches.
+ * Returns the CSS background-position for the given tile number on a board
+ * of the given size, assuming the tile renders the original image with
+ * `background-size: ${size*100}% ${size*100}%`. Tile numbers are
+ * 1..size*size - 1. Tile N occupies the (row, col) the solved board places
+ * it at, so the image slice matches.
  */
 export const tileBackgroundPosition = (
   tileNumber: number,
+  size: number,
 ): { x: string; y: string } => {
   const solvedIndex = tileNumber - 1;
-  const row = rowOf(solvedIndex);
-  const col = colOf(solvedIndex);
-  // With 4 cells per axis, each step is 100/3 = 33.333...%
-  const step = 100 / (BOARD_SIZE - 1);
+  const row = rowOf(solvedIndex, size);
+  const col = colOf(solvedIndex, size);
+  // With `size` cells per axis, each step is 100/(size-1)%
+  const step = 100 / (size - 1);
   return {
     x: `${col * step}%`,
     y: `${row * step}%`,

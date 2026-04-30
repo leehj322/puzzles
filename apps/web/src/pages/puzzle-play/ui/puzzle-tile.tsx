@@ -7,11 +7,13 @@ import { cn } from "@/shared/lib/cn";
 export function PuzzleTile({
   tile,
   index,
+  size,
   imageSrc,
   onActivate,
 }: {
   tile: Tile;
   index: number;
+  size: number;
   imageSrc: string;
   onActivate: (index: number) => void;
 }) {
@@ -19,9 +21,10 @@ export function PuzzleTile({
     return <div className="aspect-square" aria-hidden />;
   }
 
-  const { x, y } = tileBackgroundPosition(tile);
-  const row = Math.floor(index / 4) + 1;
-  const col = (index % 4) + 1;
+  const { x, y } = tileBackgroundPosition(tile, size);
+  const row = Math.floor(index / size) + 1;
+  const col = (index % size) + 1;
+  const backgroundSize = `${size * 100}% ${size * 100}%`;
 
   return (
     <button
@@ -39,7 +42,7 @@ export function PuzzleTile({
       )}
       style={{
         backgroundImage: `url(${imageSrc})`,
-        backgroundSize: "400% 400%",
+        backgroundSize,
         backgroundPosition: `${x} ${y}`,
       }}
     />
