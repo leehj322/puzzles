@@ -22,7 +22,7 @@ export function LocaleSwitcher() {
     <div
       role="group"
       aria-label={t("language")}
-      className="inline-flex items-center gap-1 font-mono text-mono uppercase"
+      className="inline-flex items-center gap-1 font-sans text-small font-semibold uppercase"
     >
       {LOCALES.map((locale) => {
         const active = locale === current;
@@ -35,7 +35,7 @@ export function LocaleSwitcher() {
             className={cn(
               "px-2 h-8 rounded-nav transition-colors",
               active
-                ? "bg-fg text-bg"
+                ? "bg-accent-soft text-fg"
                 : "text-fg-muted hover:text-fg hover:bg-surface-warm",
             )}
           >

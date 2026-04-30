@@ -1,39 +1,75 @@
 /*
- * Design tokens. Light values follow .cursor/DESIGN.md §2.
- * Dark values are a "warm dark" hypothesis (DESIGN.md does not specify dark mode);
- * keep all theme overrides in this file so they can be replaced in one place.
+ * Design tokens — Candy Kawaii variant.
+ * Tone & rules live in .cursor/skills/design-system/SKILL.md.
+ * Keep all theme overrides in this file so they can be replaced in one place.
  */
 
 :root {
-  --bg: #faf9f6;
+  --bg: #fff8f3;
   --surface: #ffffff;
-  --surface-warm: #faf9f6;
-  --border: #dedbd6;
-  --border-strong: #d3cec6;
+  --surface-warm: #fff0e6;
+  --border: #ffe1d0;
+  --border-strong: #ffc6a8;
 
-  --fg: #111111;
-  --fg-muted: #7b7b78;
-  --fg-subtle: #9c9fa5;
+  --fg: #3a2a3d;
+  --fg-muted: #8b6f80;
+  --fg-subtle: #c4a9bb;
 
-  --accent: #ff5600;
+  --accent: #ff7a59;
+  --accent-strong: #d85f3f;
+  --accent-soft: #ffe5db;
   --accent-fg: #ffffff;
 
-  --active: #2c6415;
+  --accent-mint: #5ce0c0;
+  --accent-peach: #ffb39c;
+  --accent-sky: #5fb8ff;
+  --accent-butter: #ffd23f;
+  --accent-rose: #ff5d9e;
+  --accent-lilac: #c89aff;
+
+  --success: #5ce0c0;
+  --warning: #ffd23f;
+  --danger: #ff5d7a;
+  --info: #5fb8ff;
+
+  --shadow-sm: 0 3px 10px rgba(255, 122, 89, 0.10);
+  --shadow-md: 0 8px 24px rgba(255, 122, 89, 0.18);
+  --shadow-lg: 0 20px 48px rgba(216, 95, 63, 0.28);
+  --shadow-key: 0 3px 0 0 var(--accent-strong);
+  --shadow-key-hover: 0 5px 0 0 var(--accent-strong);
 }
 
 [data-theme="dark"] {
-  --bg: #111111;
-  --surface: #1a1a19;
-  --surface-warm: #1f1e1c;
-  --border: #2e2c28;
-  --border-strong: #3a3833;
+  --bg: #2a1f2c;
+  --surface: #352533;
+  --surface-warm: #3d2c3a;
+  --border: #4d3a48;
+  --border-strong: #634c5d;
 
-  --fg: #faf9f6;
-  --fg-muted: #a8a6a1;
-  --fg-subtle: #7b7b78;
+  --fg: #ffeede;
+  --fg-muted: #c5a8b6;
+  --fg-subtle: #8b738a;
 
-  --accent: #ff5600;
-  --accent-fg: #ffffff;
+  --accent: #ff8e6f;
+  --accent-strong: #d85f3f;
+  --accent-soft: #4a2e35;
+  --accent-fg: #2a1f2c;
 
-  --active: #4caa2c;
+  --accent-mint: #6deacd;
+  --accent-peach: #ffc1a8;
+  --accent-sky: #74c4ff;
+  --accent-butter: #ffdc5c;
+  --accent-rose: #ff7baf;
+  --accent-lilac: #d3acff;
+
+  --success: #6deacd;
+  --warning: #ffdc5c;
+  --danger: #ff7891;
+  --info: #74c4ff;
+
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.55);
+  --shadow-key: 0 3px 0 0 var(--accent-strong);
+  --shadow-key-hover: 0 5px 0 0 var(--accent-strong);
 }

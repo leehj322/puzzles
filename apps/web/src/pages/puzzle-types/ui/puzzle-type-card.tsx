@@ -14,10 +14,10 @@ export function PuzzleTypeCard({ type }: { type: PuzzleType }) {
   const content = (
     <Card
       className={cn(
-        "h-full p-6 flex flex-col gap-3 transition-transform duration-200 ease-[var(--ease-out-puzzle)]",
+        "h-full p-6 flex flex-col gap-3 transition-[transform,box-shadow] duration-200 ease-(--ease-bounce)",
         "motion-reduce:transition-none",
         type.available
-          ? "hover:scale-[1.02] hover:border-border-strong cursor-pointer"
+          ? "hover:scale-[1.02] hover:-translate-y-0.5 hover:shadow-md hover:border-accent cursor-pointer motion-reduce:hover:scale-100 motion-reduce:hover:translate-y-0"
           : "opacity-60",
       )}
     >

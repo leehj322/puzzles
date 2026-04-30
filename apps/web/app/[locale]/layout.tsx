@@ -1,6 +1,7 @@
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
+import { Quicksand, Fredoka } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import { ThemeProvider } from "@/app/providers/theme-provider";
@@ -10,6 +11,20 @@ import { routing } from "@/shared/i18n/routing";
 
 import type { Metadata } from "next";
 import "@/app/styles/globals.css";
+
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-quicksand",
+  display: "swap",
+});
+
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-fredoka",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Puzzles",
@@ -35,7 +50,11 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={`${quicksand.variable} ${fredoka.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <ThemeProvider>
           <NextIntlClientProvider>

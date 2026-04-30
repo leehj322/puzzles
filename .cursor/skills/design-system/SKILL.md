@@ -1,168 +1,268 @@
 ---
 name: design-system
-description: Apply the Intercom-inspired warm-cream design system (Saans typography, Fin Orange accent, 4px button radius). Use when creating or styling UI components, buttons, cards, or layouts in this project.
+description: Apply the playful & cute puzzle-platform design system — rounded corners (button 12-16px, card 20-24px), multi-color playful accents (coral/yellow/mint/lavender), soft pastel or candy-kawaii tone variants, gentle bounce interactions. Use when creating or styling UI components, buttons, cards, or layouts in this project.
 ---
 
-# Design System Inspired by Intercom
+# Puzzle Platform Design System — Playful & Cute
 
 ## 1. Visual Theme & Atmosphere
 
-Intercom's website is a warm, confident customer service platform that communicates "AI-first helpdesk" through a clean, editorial design language. The page operates on a warm off-white canvas (`#faf9f6`) with off-black (`#111111`) text, creating an intimate, magazine-like reading experience. The signature Fin Orange (`#ff5600`) — named after Intercom's AI agent — serves as the singular vibrant accent against the warm neutral palette.
+This is a **puzzle platform for everyday play** — not a business tool. The design language should feel **light, friendly, and joyful**, like picking up a board-game piece. We move away from sharp industrial geometry and toward **rounded, bouncy, multi-color** surfaces that invite tapping, dragging, and lingering.
 
-The typography uses Saans — a custom geometric sans-serif with aggressive negative letter-spacing (-2.4px at 80px, -0.48px at 24px) and a consistent 1.00 line-height across all heading sizes. This creates ultra-compressed, billboard-like headlines that feel engineered and precise. Serrif provides the serif companion for editorial moments, and SaansMono handles code and uppercase technical labels. MediumLL and LLMedium appear for specific UI contexts, creating a rich five-font ecosystem.
+The system supports **two tone variants** — pick one per surface and stay consistent within it:
 
-What distinguishes Intercom is its remarkably sharp geometry — 4px border-radius on buttons creates near-rectangular interactive elements that feel industrial and precise, contrasting with the warm surface colors. Button hover states use `scale(1.1)` expansion, creating a physical "growing" interaction. The border system uses warm oat tones (`#dedbd6`) and oklab-based opacity values for sophisticated color management.
+- **Soft Pastel** (default for most pages): muted lavender / mint / peach on warm off-white. Calm, modern-cute, suitable for long sessions and large UIs (lists, dashboards, settings).
+- **Candy Kawaii** (for hero, onboarding, celebration moments): cream / pink / baby-blue with stronger pop, hand-drawn feel, slight wobble. Used sparingly for delight moments.
 
-**Key Characteristics:**
+**Key Characteristics (both variants):**
 
-- Warm off-white canvas (`#faf9f6`) with oat-toned borders (`#dedbd6`)
-- Saans font with extreme negative tracking (-2.4px at 80px) and 1.00 line-height
-- Fin Orange (`#ff5600`) as singular brand accent
-- Sharp 4px border-radius — near-rectangular buttons and elements
-- Scale(1.1) hover with scale(0.85) active — physical button interaction
-- SaansMono uppercase labels with wide tracking (0.6px–1.2px)
-- Rich multi-color report palette (blue, green, red, pink, lime, orange)
-- oklab color values for sophisticated opacity management
+- Soft off-white canvas (`#fbfaf7`) — warmer than pure white, gentler than gray
+- **Rounded geometry** — buttons 12–16px, cards 20–24px, pills for tags
+- **Multi-color playful palette** — coral, yellow, mint, lavender, sky used together, never monochrome
+- Gentle bounce interactions — `scale(1.04)` hover, `scale(0.96)` active, soft spring easing
+- Soft, low-spread shadows with a hint of color tint (not pure black)
+- Friendly typography — rounded sans-serif, normal/positive tracking (no aggressive negative kerning)
+- Generous whitespace and breathing room — never cramped
 
 ## 2. Color Palette & Roles
 
-### Primary
+### Surfaces (shared)
 
-- **Off Black** (`#111111`): `--color-off-black`, primary text, button backgrounds
-- **Pure White** (`#ffffff`): `--wsc-color-content-primary`, primary surface
-- **Warm Cream** (`#faf9f6`): Button backgrounds, card surfaces
-- **Fin Orange** (`#ff5600`): `--color-fin`, primary brand accent
-- **Report Orange** (`#fe4c02`): `--color-report-orange`, data visualization
+- **Cream** (`#fbfaf7`): primary canvas — `--color-surface`
+- **White** (`#ffffff`): elevated card surface — `--color-surface-elevated`
+- **Soft Cream** (`#f4f1ea`): nested/sunken surface — `--color-surface-sunken`
+- **Ink** (`#2a2a32`): primary text (softer than pure black) — `--color-text`
+- **Ink Muted** (`#6b6b78`): secondary text — `--color-text-muted`
+- **Ink Soft** (`#a6a6b3`): tertiary / placeholder — `--color-text-soft`
+- **Border** (`#ece8df`): warm rounded border — `--color-border`
 
-### Report Palette
+### Soft Pastel Variant (default)
 
-- **Report Blue** (`#65b5ff`): `--color-report-blue`
-- **Report Green** (`#0bdf50`): `--color-report-green`
-- **Report Red** (`#c41c1c`): `--color-report-red`
-- **Report Pink** (`#ff2067`): `--color-report-pink`
-- **Report Lime** (`#b3e01c`): `--color-report-lime-300`
-- **Green** (`#00da00`): `--color-green`
-- **Deep Blue** (`#0007cb`): Deep blue accent
+Muted, modern, calm-cute. Use as primary accents across most product UI.
 
-### Neutral Scale (Warm)
+- **Lavender** (`#b8a4ff`): `--accent-lavender` — primary brand accent (focus, primary CTA)
+- **Mint** (`#7fd6c2`): `--accent-mint` — success, completion
+- **Peach** (`#ffb39c`): `--accent-peach` — warm highlights, hover
+- **Sky** (`#a4d4ff`): `--accent-sky` — info, secondary
+- **Butter** (`#ffe28a`): `--accent-butter` — attention, badges
+- **Rose** (`#ff9bb8`): `--accent-rose` — favorites, hearts
 
-- **Black 80** (`#313130`): `--wsc-color-black-80`, dark neutral
-- **Black 60** (`#626260`): `--wsc-color-black-60`, mid neutral
-- **Black 50** (`#7b7b78`): `--wsc-color-black-50`, muted text
-- **Content Tertiary** (`#9c9fa5`): `--wsc-color-content-tertiary`
-- **Oat Border** (`#dedbd6`): Warm border color
-- **Warm Sand** (`#d3cec6`): Light warm neutral
+### Candy Kawaii Variant (hero / onboarding / celebration)
+
+Higher chroma, sweeter, more pop. Use sparingly on hero sections and reward states.
+
+- **Pop Coral** (`#ff7a59`): `--candy-coral` — primary kawaii accent
+- **Pop Pink** (`#ff5d9e`): `--candy-pink`
+- **Pop Yellow** (`#ffd23f`): `--candy-yellow`
+- **Pop Mint** (`#5ce0c0`): `--candy-mint`
+- **Pop Sky** (`#5fb8ff`): `--candy-sky`
+- **Pop Lilac** (`#c89aff`): `--candy-lilac`
+
+### Semantic
+
+- **Success**: `--accent-mint` (`#7fd6c2`)
+- **Warning**: `--accent-butter` (`#ffe28a`) with ink text
+- **Danger**: `#ff6b7a` (soft red, never harsh) — `--color-danger`
+- **Info**: `--accent-sky` (`#a4d4ff`)
+
+### Multi-color Usage Rule
+
+Puzzle pieces, tags, avatars, and category chips **should rotate through the palette** — never a single accent column. Pick a deterministic hash (e.g. piece id % 6) so the same piece stays the same color across renders.
 
 ## 3. Typography Rules
 
 ### Font Families
 
-- **Primary**: `Saans`, fallbacks: `Saans Fallback, ui-sans-serif, system-ui`
-- **Serif**: `Serrif`, fallbacks: `Serrif Fallback, ui-serif, Georgia`
-- **Monospace**: `SaansMono`, fallbacks: `SaansMono Fallback, ui-monospace`
-- **UI**: `MediumLL` / `LLMedium`, fallbacks: `system-ui, -apple-system`
+- **Primary**: rounded geometric sans-serif — `Quicksand`, `Nunito`, or `Plus Jakarta Sans`
+  - fallback: `ui-rounded, "SF Pro Rounded", system-ui, sans-serif`
+- **Display** (hero, celebration): `Fredoka` or `Baloo 2` — rounded, slightly chunky
+  - fallback: `ui-rounded, system-ui, sans-serif`
+- **Mono** (timer, scores): `JetBrains Mono` or `DM Mono`
+  - fallback: `ui-monospace, monospace`
 
 ### Hierarchy
 
-| Role            | Font      | Size        | Weight  | Line Height  | Letter Spacing        |
-| --------------- | --------- | ----------- | ------- | ------------ | --------------------- |
-| Display Hero    | Saans     | 80px        | 400     | 1.00 (tight) | -2.4px                |
-| Section Heading | Saans     | 54px        | 400     | 1.00         | -1.6px                |
-| Sub-heading     | Saans     | 40px        | 400     | 1.00         | -1.2px                |
-| Card Title      | Saans     | 32px        | 400     | 1.00         | -0.96px               |
-| Feature Title   | Saans     | 24px        | 400     | 1.00         | -0.48px               |
-| Body Emphasis   | Saans     | 20px        | 400     | 0.95         | -0.2px                |
-| Nav / UI        | Saans     | 18px        | 400     | 1.00         | normal                |
-| Body            | Saans     | 16px        | 400     | 1.50         | normal                |
-| Body Light      | Saans     | 14px        | 300     | 1.40         | normal                |
-| Button          | Saans     | 16px / 14px | 400     | 1.50 / 1.43  | normal                |
-| Button Bold     | LLMedium  | 16px        | 700     | 1.20         | 0.16px                |
-| Serif Body      | Serrif    | 16px        | 300     | 1.40         | -0.16px               |
-| Mono Label      | SaansMono | 12px        | 400–500 | 1.00–1.30    | 0.6px–1.2px uppercase |
+| Role            | Font    | Size | Weight | Line Height | Letter Spacing |
+| --------------- | ------- | ---- | ------ | ----------- | -------------- |
+| Display Hero    | Fredoka | 64px | 600    | 1.10        | -0.5px         |
+| Section Heading | Fredoka | 40px | 600    | 1.15        | -0.3px         |
+| Sub-heading     | Primary | 28px | 600    | 1.20        | -0.2px         |
+| Card Title      | Primary | 22px | 600    | 1.25        | -0.1px         |
+| Feature Title   | Primary | 18px | 600    | 1.35        | 0              |
+| Body Emphasis   | Primary | 16px | 600    | 1.50        | 0              |
+| Body            | Primary | 15px | 500    | 1.55        | 0              |
+| Body Small      | Primary | 13px | 500    | 1.50        | 0              |
+| Button          | Primary | 15px | 600    | 1.20        | 0.1px          |
+| Tag / Chip      | Primary | 12px | 600    | 1.00        | 0.2px          |
+| Mono / Timer    | Mono    | 16px | 500    | 1.20        | 0              |
+
+**Tracking rule**: Use **normal or slightly positive** letter-spacing. NEVER apply aggressive negative tracking — the rounded font character is part of the cute identity.
 
 ## 4. Component Stylings
 
 ### Buttons
 
-**Primary Dark**
+**Primary (Soft Pastel)**
 
-- Background: `#111111`
-- Text: `#ffffff`
-- Padding: 0px 14px
-- Radius: 4px
-- Hover: white background, dark text, scale(1.1)
-- Active: green background (`#2c6415`), scale(0.85)
+- Background: `--accent-lavender` (`#b8a4ff`)
+- Text: `--color-text` (`#2a2a32`) — readable, not pure white on pastel
+- Padding: `12px 20px`
+- Radius: **14px**
+- Shadow: `0 2px 0 0 #9684e0` (solid offset, gives "pressable" feel — like a key cap)
+- Hover: `scale(1.04)`, shadow grows to `0 4px 0 0 #9684e0`, lift `translateY(-1px)`
+- Active: `scale(0.96)`, shadow collapses to `0 0 0 0`, `translateY(2px)` (the key is pressed down)
+- Transition: `transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1)` (gentle overshoot)
 
-**Outlined**
+**Primary (Candy Kawaii)**
+
+- Same shape, but background `--candy-coral` (`#ff7a59`), shadow `0 3px 0 0 #d85f3f`
+- Slightly larger radius: **16px**
+
+**Secondary / Outlined**
+
+- Background: `--color-surface-elevated`
+- Text: `--color-text`
+- Border: `2px solid --color-border`
+- Radius: 14px
+- Hover: border becomes `--accent-lavender`, soft tint background `#f6f3ff`
+
+**Ghost / Tertiary**
 
 - Background: transparent
-- Text: `#111111`
-- Border: `1px solid #111111`
-- Radius: 4px
-- Same scale hover/active behavior
+- Text: `--color-text-muted`
+- Hover: `--color-surface-sunken` background, text becomes `--color-text`
+- Radius: 12px
 
-**Warm Card Button**
+**Icon Button**
 
-- Background: `#faf9f6`
-- Text: `#111111`
-- Padding: 16px
-- Border: `1px solid oklab(... / 0.1)`
+- Square 40×40, radius **12px**
+- Same hover/active bounce
 
 ### Cards & Containers
 
-- Background: `#faf9f6` (warm cream)
-- Border: `1px solid #dedbd6` (warm oat)
-- Radius: 8px
-- No visible shadows
+- Background: `--color-surface-elevated` (white)
+- Border: `1px solid --color-border` (warm)
+- Radius: **20px** (Soft Pastel) / **24px** (Candy Kawaii)
+- Shadow: `0 2px 8px rgba(180, 168, 140, 0.08)` — colored, soft, not pure black
+- Hover (interactive cards): `scale(1.02)`, shadow grows to `0 6px 20px rgba(180, 168, 140, 0.14)`, `translateY(-2px)`
+
+### Tags / Chips / Pills
+
+- Radius: **9999px** (full pill) — chips are the one place we go fully round
+- Padding: `4px 10px` (small) / `6px 14px` (medium)
+- Background: pastel tint at ~20% opacity (e.g. `--accent-lavender` at 20%)
+- Text: matching darker accent shade
+
+### Inputs
+
+- Background: `--color-surface-elevated`
+- Border: `2px solid --color-border`
+- Radius: **12px**
+- Padding: `12px 14px`
+- Focus: border becomes `--accent-lavender`, soft glow `0 0 0 4px rgba(184, 164, 255, 0.18)`
+- No harsh red on error — use `--color-danger` border with soft pink glow
 
 ### Navigation
 
-- Saans 16px for links
-- Off-black text on white
-- Small 4px–6px radius buttons
-- Orange Fin accent for AI features
+- Primary font 15px weight 600
+- Active link: pill background in `--accent-lavender` at 15% opacity, text in lavender-800
+- Hover: `--color-surface-sunken` background, radius 10px
+
+### Puzzle Pieces (domain component)
+
+- Radius: **16px** on outer corners
+- Each piece pulls a color from the **6-color palette rotation** by deterministic hash
+- Drag state: `scale(1.08)` + shadow `0 12px 24px rgba(0,0,0,0.18)` + slight rotation `rotate(2deg)`
+- Snap-in: spring bounce, brief scale `1.15 → 1.0` over 240ms
 
 ## 5. Layout Principles
 
-### Spacing: 8px, 10px, 12px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 60px, 64px, 80px, 96px
+### Spacing scale
 
-### Border Radius: 4px (buttons), 6px (nav items), 8px (cards, containers)
+`4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96` (px) — generous, breathable
+
+### Border Radius scale
+
+| Element      | Radius              |
+| ------------ | ------------------- |
+| Tag / Chip   | 9999px (pill)       |
+| Input        | 12px                |
+| Button       | 14px (Pastel) / 16px (Candy) |
+| Icon button  | 12px                |
+| Card         | 20px (Pastel) / 24px (Candy) |
+| Modal / Sheet| 24px                |
+| Puzzle piece | 16px                |
+
+### Corner consistency rule
+
+Within one container, child radii should be **smaller than the parent**. e.g. card 20px → button inside 14px → tag inside 9999px (pill is exempt).
 
 ## 6. Depth & Elevation
 
-Minimal shadows. Depth through warm border colors and surface tints.
+Soft, **color-tinted** shadows — never pure `rgba(0,0,0,…)`.
 
-## 7. Do's and Don'ts
+- **Level 0** — flat, on canvas: no shadow
+- **Level 1** — resting card: `0 2px 8px rgba(180, 168, 140, 0.08)`
+- **Level 2** — hover/lifted: `0 6px 20px rgba(180, 168, 140, 0.14)`
+- **Level 3** — modal/popover: `0 16px 40px rgba(80, 72, 56, 0.18)`
+- **Pressable button**: solid offset shadow `0 2px 0 0 <accent-shade-darker>` (the keycap effect)
+
+## 7. Motion
+
+- **Default easing**: `cubic-bezier(0.34, 1.56, 0.64, 1)` (gentle overshoot, "boing")
+- **Default duration**: 180ms (small) / 240ms (medium) / 320ms (large)
+- **Hover**: lift + grow (`scale(1.04)`, `translateY(-1px)`)
+- **Active**: press down (`scale(0.96)`, `translateY(2px)`)
+- **Success / snap**: spring bounce, `1.0 → 1.15 → 1.0`
+- **Page transitions**: fade + slide-up 8px, 240ms
+- Respect `prefers-reduced-motion: reduce` — disable scale/translate, keep opacity only
+
+## 8. Do's and Don'ts
 
 ### Do
 
-- Use Saans with 1.00 line-height and negative tracking on all headings
-- Apply 4px radius on buttons — sharp geometry is the identity
-- Use Fin Orange (#ff5600) for AI/brand accent only
-- Apply scale(1.1) hover on buttons
-- Use warm neutrals (#faf9f6, #dedbd6)
+- Use **rounded geometry** consistently — buttons ≥12px, cards ≥20px
+- Rotate accents through the **multi-color palette** for repeated items (pieces, tags, avatars)
+- Use **rounded** sans-serif (Quicksand / Nunito / Fredoka) with normal tracking
+- Apply gentle **bounce** on hover/active using spring easing
+- Use **color-tinted** soft shadows
+- Keep text on pastels as **dark ink** (`#2a2a32`), not white — pastels need contrast
 
 ### Don't
 
-- Don't round buttons beyond 4px
-- Don't use Fin Orange decoratively
-- Don't use cool gray borders — always warm oat tones
-- Don't skip the negative tracking on headings
+- Don't use sharp 4px radii — too industrial for this product
+- Don't apply aggressive negative letter-spacing — kills the friendly feel
+- Don't use a single monochrome accent for repeated decorative elements
+- Don't use harsh black `rgba(0,0,0,…)` shadows — always tinted
+- Don't put white text on pastel buttons — contrast fails
+- Don't mix Soft Pastel and Candy Kawaii within one surface — pick one tone per page
 
-## 8. Responsive Behavior
+## 9. Responsive Behavior
 
-Breakpoints: 425px, 530px, 600px, 640px, 768px, 896px
+Breakpoints: `480px, 640px, 768px, 1024px, 1280px`
 
-## 9. Agent Prompt Guide
+- Mobile-first; tap targets minimum **44×44px**
+- Buttons grow padding on mobile (`14px 22px`)
+- Cards reduce radius slightly on mobile (`20px → 16px`) so they don't look bubble-heavy on small screens
+
+## 10. Agent Prompt Guide
 
 ### Quick Color Reference
 
-- Text: Off Black (`#111111`)
-- Background: Warm Cream (`#faf9f6`)
-- Accent: Fin Orange (`#ff5600`)
-- Border: Oat (`#dedbd6`)
-- Muted: `#7b7b78`
+- Canvas: Cream (`#fbfaf7`)
+- Card surface: White (`#ffffff`)
+- Text: Ink (`#2a2a32`)
+- Border: Warm (`#ece8df`)
+- Default accent (Pastel): Lavender (`#b8a4ff`)
+- Hero accent (Candy): Coral (`#ff7a59`)
+- 6-color rotation: lavender, mint, peach, sky, butter, rose
 
 ### Example Component Prompts
 
-- "Create hero: warm cream (#faf9f6) background. Saans 80px weight 400, line-height 1.00, letter-spacing -2.4px, #111111. Dark button (#111111, 4px radius). Hover: scale(1.1), white bg."
+- **Primary button (Pastel)**: "Lavender (#b8a4ff) bg, ink text (#2a2a32), 14px radius, padding 12px 20px, solid offset shadow `0 2px 0 0 #9684e0`, Quicksand 15/600. Hover scale(1.04) translateY(-1px) shadow grows; active scale(0.96) translateY(2px) shadow collapses. Easing cubic-bezier(0.34, 1.56, 0.64, 1) 180ms."
+
+- **Puzzle piece**: "Square card 16px radius, color from 6-palette rotation by piece-id hash (lavender/mint/peach/sky/butter/rose). Drag: scale(1.08) rotate(2deg) shadow `0 12px 24px rgba(0,0,0,0.18)`. Snap: spring bounce 1.0→1.15→1.0 over 240ms."
+
+- **Card (Pastel)**: "White surface, 1px warm border (#ece8df), 20px radius, soft tinted shadow `0 2px 8px rgba(180,168,140,0.08)`. Hover: lift translateY(-2px), shadow grows to `0 6px 20px rgba(180,168,140,0.14)`."
+
+- **Hero (Candy)**: "Cream canvas (#fbfaf7), Fredoka 64/600 ink text with -0.5px tracking. Coral primary CTA (#ff7a59) with `0 3px 0 0 #d85f3f` shadow, 16px radius. Decorative floating pastel shapes in mint/butter/lilac at 60% opacity."

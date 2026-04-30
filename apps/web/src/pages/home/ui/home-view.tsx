@@ -9,13 +9,13 @@ export function HomeView() {
   return (
     <main className="px-6 py-16 sm:py-24">
       <div className="mx-auto max-w-[896px] flex flex-col gap-10">
-        <p className="font-mono text-mono uppercase text-fg-muted">
+        <p className="font-sans text-small font-semibold uppercase tracking-wide text-accent-strong">
           {t("eyebrow")}
         </p>
-        <h1 className="font-sans text-h2 sm:text-h1 lg:text-display max-w-[800px]">
+        <h1 className="font-display font-semibold text-h2 sm:text-h1 lg:text-display max-w-[800px]">
           {t("title")}
         </h1>
-        <p className="font-serif text-body sm:text-lead text-fg-muted max-w-[560px]">
+        <p className="font-sans text-body sm:text-lead text-fg-muted max-w-[560px]">
           {t("subtitle")}
         </p>
         <div>

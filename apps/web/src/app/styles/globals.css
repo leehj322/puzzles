@@ -10,54 +10,80 @@
   --color-fg: var(--fg);
   --color-fg-muted: var(--fg-muted);
   --color-fg-subtle: var(--fg-subtle);
+
   --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
   --color-accent-fg: var(--accent-fg);
-  --color-active: var(--active);
 
-  --radius-button: 4px;
-  --radius-nav: 6px;
-  --radius-card: 8px;
+  --color-mint: var(--accent-mint);
+  --color-peach: var(--accent-peach);
+  --color-sky: var(--accent-sky);
+  --color-butter: var(--accent-butter);
+  --color-rose: var(--accent-rose);
 
-  --font-sans: "Saans", "Saans Fallback", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-serif: "Serrif", "Serrif Fallback", ui-serif, Georgia, serif;
-  --font-mono: "SaansMono", "SaansMono Fallback", ui-monospace, "SFMono-Regular", monospace;
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
 
-  --text-display: 80px;
-  --text-display--line-height: 1;
-  --text-display--letter-spacing: -2.4px;
+  --radius-input: 14px;
+  --radius-button: 16px;
+  --radius-icon: 14px;
+  --radius-nav: 12px;
+  --radius-card: 24px;
+  --radius-modal: 28px;
+  --radius-pill: 9999px;
 
-  --text-h1: 54px;
-  --text-h1--line-height: 1;
-  --text-h1--letter-spacing: -1.6px;
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-key: var(--shadow-key);
+  --shadow-key-hover: var(--shadow-key-hover);
+
+  --font-sans:
+    var(--font-quicksand), ui-rounded, "SF Pro Rounded", system-ui,
+    -apple-system, sans-serif;
+  --font-display:
+    var(--font-fredoka), ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  --font-mono:
+    "JetBrains Mono", "DM Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-serif: var(--font-display);
+
+  --text-display: 64px;
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.5px;
+
+  --text-h1: 48px;
+  --text-h1--line-height: 1.12;
+  --text-h1--letter-spacing: -0.4px;
 
   --text-h2: 40px;
-  --text-h2--line-height: 1;
-  --text-h2--letter-spacing: -1.2px;
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.3px;
 
-  --text-h3: 32px;
-  --text-h3--line-height: 1;
-  --text-h3--letter-spacing: -0.96px;
+  --text-h3: 28px;
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.2px;
 
-  --text-h4: 24px;
-  --text-h4--line-height: 1;
-  --text-h4--letter-spacing: -0.48px;
+  --text-h4: 22px;
+  --text-h4--line-height: 1.25;
+  --text-h4--letter-spacing: -0.1px;
 
-  --text-lead: 20px;
-  --text-lead--line-height: 0.95;
-  --text-lead--letter-spacing: -0.2px;
+  --text-lead: 18px;
+  --text-lead--line-height: 1.45;
 
-  --text-ui: 18px;
-  --text-ui--line-height: 1;
+  --text-ui: 15px;
+  --text-ui--line-height: 1.4;
 
-  --text-body: 16px;
-  --text-body--line-height: 1.5;
+  --text-body: 15px;
+  --text-body--line-height: 1.55;
 
-  --text-small: 14px;
-  --text-small--line-height: 1.4;
+  --text-small: 13px;
+  --text-small--line-height: 1.5;
 
-  --text-mono: 12px;
-  --text-mono--line-height: 1.1;
-  --text-mono--letter-spacing: 0.6px;
+  --text-mono: 13px;
+  --text-mono--line-height: 1.2;
 
   --breakpoint-xs: 425px;
   --breakpoint-sm: 530px;
@@ -66,7 +92,8 @@
   --breakpoint-xl: 768px;
   --breakpoint-2xl: 896px;
 
-  --ease-out-puzzle: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-puzzle: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @layer base {
@@ -79,6 +106,7 @@
     background-color: var(--bg);
     color: var(--fg);
     font-family: var(--font-sans);
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -92,5 +120,6 @@
   :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
+    border-radius: 6px;
   }
 }
