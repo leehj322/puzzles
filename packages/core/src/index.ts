@@ -22,4 +22,11 @@ export {
   type PuzzleTypeId,
 } from "./puzzle-type/puzzle-type";
 
+export {
+  getSudokuPuzzles,
+  getSudokuPuzzle,
+  type SudokuPuzzle,
+  type SudokuDifficulty,
+} from "./sudoku-puzzle/sudoku-puzzle";
+
 export { formatTime } from "./format-time/format-time";

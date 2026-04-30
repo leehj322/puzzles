@@ -18,7 +18,7 @@ export const PUZZLE_TYPES: readonly PuzzleType[] = [
     id: "sudoku",
     nameKey: "puzzleTypes.sudoku.name",
     descKey: "puzzleTypes.sudoku.desc",
-    available: false,
+    available: true,
   },
   {
     id: "nonogram",
