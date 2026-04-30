@@ -15,6 +15,7 @@
     "@puzzles/core": "workspace:*",
     "@puzzles/i18n": "workspace:*",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
     "next": "^16.2.4",
     "next-intl": "^4.11.0",
     "next-themes": "^0.4.6",
