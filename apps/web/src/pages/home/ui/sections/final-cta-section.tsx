@@ -4,9 +4,8 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/shared/i18n/navigation";
+import { fadeUp, stagger, VIEWPORT_ONCE } from "@/shared/lib/motion";
 import { buttonClass } from "@/shared/ui/button";
-
-import { fadeUp, stagger, VIEWPORT_ONCE } from "../../lib/motion";
 
 export function FinalCtaSection() {
   const t = useTranslations("home.finalCta");

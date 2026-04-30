@@ -1,9 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/shared/i18n/navigation";
 import { cn } from "@/shared/lib/cn";
+import { fadeUp } from "@/shared/lib/motion";
 import { Badge } from "@/shared/ui/badge";
-import { Card } from "@/shared/ui/card";
+import {
+  PUZZLE_TYPE_ACCENT,
+  PuzzleIllustration,
+} from "@/shared/ui/puzzle-illustration";
 
 import type { PuzzleType } from "@puzzles/core";
 
@@ -11,35 +18,53 @@ export function PuzzleTypeCard({ type }: { type: PuzzleType }) {
   const t = useTranslations();
   const tCommon = useTranslations("common");
 
-  const content = (
-    <Card
+  const accent = PUZZLE_TYPE_ACCENT[type.id];
+
+  const card = (
+    <motion.article
+      variants={fadeUp}
+      whileHover={type.available ? { y: -4 } : undefined}
+      transition={{ type: "spring", stiffness: 300, damping: 22 }}
       className={cn(
-        "h-full p-6 flex flex-col gap-3 transition-[transform,box-shadow] duration-200 ease-(--ease-bounce)",
-        "motion-reduce:transition-none",
-        type.available
-          ? "hover:scale-[1.02] hover:-translate-y-0.5 hover:shadow-md hover:border-accent cursor-pointer motion-reduce:hover:scale-100 motion-reduce:hover:translate-y-0"
-          : "opacity-60",
+        "flex h-full flex-col gap-4 rounded-card border border-border bg-surface p-5 shadow-sm",
+        !type.available && "opacity-80",
       )}
     >
-      <div className="flex items-start justify-between gap-2">
-        <h3 className="font-sans text-h4">{t(type.nameKey)}</h3>
-        {!type.available && <Badge tone="muted">{tCommon("comingSoon")}</Badge>}
+      <div
+        className={cn(
+          "relative flex h-32 items-center justify-center overflow-hidden rounded-media",
+          accent,
+          !type.available && "saturate-50",
+        )}
+      >
+        <PuzzleIllustration typeId={type.id} />
+        {!type.available && (
+          <span className="absolute right-3 top-3">
+            <Badge tone="muted">{tCommon("comingSoon")}</Badge>
+          </span>
+        )}
       </div>
-      <p className="font-sans text-small text-fg-muted">{t(type.descKey)}</p>
-    </Card>
+      <div className="flex flex-1 flex-col gap-2">
+        <h3 className="font-display text-h4 font-semibold">{t(type.nameKey)}</h3>
+        <p className="font-sans text-small text-fg-muted">{t(type.descKey)}</p>
+      </div>
+    </motion.article>
   );
 
   if (!type.available) {
     return (
-      <div aria-disabled className="block">
-        {content}
+      <div aria-disabled className="block h-full">
+        {card}
       </div>
     );
   }
 
   return (
-    <Link href={`/puzzles/${type.id}`} className="block focus-visible:outline-none">
-      {content}
+    <Link
+      href={`/puzzles/${type.id}`}
+      className="block h-full focus-visible:outline-none"
+    >
+      {card}
     </Link>
   );
 }

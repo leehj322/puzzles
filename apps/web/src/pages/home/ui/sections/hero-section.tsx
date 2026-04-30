@@ -4,9 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/shared/i18n/navigation";
+import { fadeUp, stagger } from "@/shared/lib/motion";
 import { buttonClass } from "@/shared/ui/button";
-
-import { fadeUp, stagger } from "../../lib/motion";
 
 const FLOATING_TILES = [
   { className: "right-[6%] top-[14%] bg-butter", size: 72, delay: 0 },

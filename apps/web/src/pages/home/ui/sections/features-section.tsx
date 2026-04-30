@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-import { fadeUp, stagger, VIEWPORT_ONCE } from "../../lib/motion";
+import { fadeUp, stagger, VIEWPORT_ONCE } from "@/shared/lib/motion";
 
 type FeatureKey = "variety" | "upload" | "ranking";
 

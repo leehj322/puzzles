@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-import { fadeUp, stagger, VIEWPORT_ONCE } from "../../lib/motion";
+import { fadeUp, stagger, VIEWPORT_ONCE } from "@/shared/lib/motion";
 
 const DISCORD_URL = "https://discord.gg/your-invite";
 const CONTACT_EMAIL = "hello@puzzles.app";
