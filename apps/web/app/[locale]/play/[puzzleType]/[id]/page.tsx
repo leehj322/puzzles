@@ -32,10 +32,10 @@ const renderEntry = (type: PuzzleType, id: string) => {
       return <NonogramPlayView puzzle={puzzle} />;
     }
     case "2048":
+    case "lights-out":
     case "minesweeper":
     case "word-search":
     case "memory":
-    case "lights-out":
       // hasEntries === false → blocked by the guard above.
       // Unavailable types are also blocked by `getPuzzleType`.
       // Exhaustive branch for type safety.

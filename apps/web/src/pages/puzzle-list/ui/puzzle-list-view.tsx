@@ -38,12 +38,12 @@ const renderCards = (puzzleType: PuzzleTypeId) => {
       ));
     }
     case "2048":
+    case "lights-out":
     case "minesweeper":
     case "word-search":
     case "memory":
-    case "lights-out":
-      // Route guards redirect 2048 and block unavailable types before
-      // reaching here.
+      // Route guards redirect single-instance puzzles (2048, lights-out)
+      // and block unavailable types before reaching here.
       notFound();
   }
 };
