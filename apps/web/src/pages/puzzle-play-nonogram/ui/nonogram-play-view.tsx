@@ -6,12 +6,12 @@ import { type NonogramPuzzle } from "@puzzles/core";
 
 import { useNonogramStore } from "../model/nonogram-store";
 
-import { NonogramBoard } from "./nonogram-board";
-import { NonogramHud } from "./nonogram-hud";
-import { NonogramPad } from "./nonogram-pad";
-import { NonogramWinModal } from "./nonogram-win-modal";
+import { NonogramBoard } from "./board";
+import { NonogramHud } from "./hud";
+import { NonogramPad } from "./pad";
+import { NonogramWinModal } from "./win-modal";
 
-export function NonogramPlayClient({ puzzle }: { puzzle: NonogramPuzzle }) {
+export function NonogramPlayView({ puzzle }: { puzzle: NonogramPuzzle }) {
   const init = useNonogramStore((s) => s.init);
 
   useEffect(() => {

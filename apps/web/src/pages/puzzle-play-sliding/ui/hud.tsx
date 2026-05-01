@@ -7,7 +7,7 @@ import { formatTime } from "@puzzles/core";
 import { Button } from "@/shared/ui/button";
 
 import { useTimer } from "../lib/use-timer";
-import { usePuzzleStore } from "../model/puzzle-store";
+import { useSlidingStore } from "../model/sliding-store";
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
@@ -20,7 +20,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-export function PuzzleHud({
+export function SlidingHud({
   preview,
   onTogglePreview,
 }: {
@@ -29,8 +29,8 @@ export function PuzzleHud({
 }) {
   const t = useTranslations("puzzlePlay");
   const tCommon = useTranslations("common");
-  const moves = usePuzzleStore((s) => s.moves);
-  const reset = usePuzzleStore((s) => s.reset);
+  const moves = useSlidingStore((s) => s.moves);
+  const reset = useSlidingStore((s) => s.reset);
   const elapsed = useTimer();
 
   return (

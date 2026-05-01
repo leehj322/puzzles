@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-import { usePuzzleStore } from "../model/puzzle-store";
+import { useSlidingStore } from "../model/sliding-store";
 
 export const useTimer = (): number => {
-  const startedAt = usePuzzleStore((s) => s.startedAt);
-  const finishedAt = usePuzzleStore((s) => s.finishedAt);
+  const startedAt = useSlidingStore((s) => s.startedAt);
+  const finishedAt = useSlidingStore((s) => s.finishedAt);
   const [, setTick] = useState(0);
 
   useEffect(() => {

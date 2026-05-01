@@ -4,11 +4,11 @@ import { useEffect } from "react";
 
 import { useGame2048Store } from "../model/game-2048-store";
 
-import { Game2048Board } from "./game-2048-board";
-import { Game2048Hud } from "./game-2048-hud";
-import { Game2048OverModal } from "./game-2048-over-modal";
+import { Game2048Board } from "./board";
+import { Game2048OverModal } from "./game-over-modal";
+import { Game2048Hud } from "./hud";
 
-export function Game2048PlayClient() {
+export function Game2048PlayView() {
   const init = useGame2048Store((s) => s.init);
 
   useEffect(() => {

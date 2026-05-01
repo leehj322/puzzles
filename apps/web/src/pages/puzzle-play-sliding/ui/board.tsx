@@ -7,11 +7,11 @@ import Image from "next/image";
 
 import { useKeyboard } from "../lib/use-keyboard";
 import { useSwipe } from "../lib/use-swipe";
-import { usePuzzleStore } from "../model/puzzle-store";
+import { useSlidingStore } from "../model/sliding-store";
 
-import { PuzzleTile } from "./puzzle-tile";
+import { SlidingTile } from "./tile";
 
-export function PuzzleBoard({
+export function SlidingBoard({
   imageSrc,
   imageAlt,
   preview,
@@ -21,9 +21,9 @@ export function PuzzleBoard({
   preview: boolean;
 }) {
   const t = useTranslations("puzzlePlay");
-  const board = usePuzzleStore((s) => s.board);
-  const moveTile = usePuzzleStore((s) => s.moveTile);
-  const moveDirection = usePuzzleStore((s) => s.moveDirection);
+  const board = useSlidingStore((s) => s.board);
+  const moveTile = useSlidingStore((s) => s.moveTile);
+  const moveDirection = useSlidingStore((s) => s.moveDirection);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const handleDirection = useCallback(
@@ -48,7 +48,7 @@ export function PuzzleBoard({
         }}
       >
         {board.tiles.map((tile, index) => (
-          <PuzzleTile
+          <SlidingTile
             key={index}
             tile={tile}
             index={index}

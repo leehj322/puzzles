@@ -6,7 +6,7 @@ import { formatTime } from "@puzzles/core";
 
 import { Button } from "@/shared/ui/button";
 
-import { useNonogramTimer } from "../lib/use-nonogram-timer";
+import { useNonogramTimer } from "../lib/use-timer";
 import { useNonogramStore } from "../model/nonogram-store";
 
 export function NonogramHud({

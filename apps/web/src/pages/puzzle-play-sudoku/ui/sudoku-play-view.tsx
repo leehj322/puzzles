@@ -4,15 +4,15 @@ import { useEffect } from "react";
 
 import { type SudokuPuzzle } from "@puzzles/core";
 
-import { useSudokuKeyboard } from "../lib/use-sudoku-keyboard";
+import { useSudokuKeyboard } from "../lib/use-keyboard";
 import { useSudokuStore } from "../model/sudoku-store";
 
-import { SudokuBoard } from "./sudoku-board";
-import { SudokuHud } from "./sudoku-hud";
-import { SudokuPad } from "./sudoku-pad";
-import { SudokuWinModal } from "./sudoku-win-modal";
+import { SudokuBoard } from "./board";
+import { SudokuHud } from "./hud";
+import { SudokuPad } from "./pad";
+import { SudokuWinModal } from "./win-modal";
 
-export function SudokuPlayClient({ puzzle }: { puzzle: SudokuPuzzle }) {
+export function SudokuPlayView({ puzzle }: { puzzle: SudokuPuzzle }) {
   const init = useSudokuStore((s) => s.init);
   useSudokuKeyboard();
 

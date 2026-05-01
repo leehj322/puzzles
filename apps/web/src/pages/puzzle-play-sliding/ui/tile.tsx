@@ -4,7 +4,7 @@ import { tileBackgroundPosition, type Tile } from "@puzzles/core";
 
 import { cn } from "@/shared/lib/cn";
 
-export function PuzzleTile({
+export function SlidingTile({
   tile,
   index,
   size,

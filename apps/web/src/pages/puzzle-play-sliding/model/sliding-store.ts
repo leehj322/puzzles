@@ -14,7 +14,7 @@ import {
 
 const DEFAULT_SIZE = 4;
 
-interface PuzzleState {
+interface SlidingState {
   imageId: string | null;
   board: Board;
   moves: number;
@@ -28,9 +28,9 @@ interface PuzzleState {
 }
 
 const applyNext = (
-  state: PuzzleState,
+  state: SlidingState,
   next: Board | null,
-): Partial<PuzzleState> | null => {
+): Partial<SlidingState> | null => {
   if (!next) return null;
   const finishedAt = isSolved(next) ? Date.now() : null;
   return {
@@ -41,7 +41,7 @@ const applyNext = (
   };
 };
 
-export const usePuzzleStore = create<PuzzleState>((set, get) => ({
+export const useSlidingStore = create<SlidingState>((set, get) => ({
   imageId: null,
   board: solvedBoard(DEFAULT_SIZE),
   moves: 0,

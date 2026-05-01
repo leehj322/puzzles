@@ -6,7 +6,7 @@ import { formatTime } from "@puzzles/core";
 
 import { Button } from "@/shared/ui/button";
 
-import { useSudokuTimer } from "../lib/use-sudoku-timer";
+import { useSudokuTimer } from "../lib/use-timer";
 import { useSudokuStore } from "../model/sudoku-store";
 
 export function SudokuHud({ difficulty }: { difficulty: string }) {
