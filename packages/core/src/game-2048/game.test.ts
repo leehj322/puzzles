@@ -10,7 +10,7 @@ import {
   moveState,
   type Game2048State,
   type Game2048Tile,
-} from "./game-2048";
+} from "./game";
 
 const tile = (
   id: number,

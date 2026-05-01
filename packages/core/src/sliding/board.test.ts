@@ -64,7 +64,6 @@ describe("move", () => {
 
   it("works on a 3x3 board", () => {
     const solved = solvedBoard(3);
-    // blank at index 8, tile 8 at index 7 → moving idx 7 swaps them
     const next = move(solved, 7);
     expect(next).not.toBeNull();
     expect(next!.tiles[7]).toBeNull();
@@ -160,13 +159,11 @@ describe("tileBackgroundPosition", () => {
   });
 
   it("the top-right tile maps to (100%, 0%)", () => {
-    // size 4 top-right is tile 4; size 6 top-right is tile 6
     expect(tileBackgroundPosition(4, 4)).toEqual({ x: "100%", y: "0%" });
     expect(tileBackgroundPosition(6, 6)).toEqual({ x: "100%", y: "0%" });
   });
 
   it("the bottom-left tile maps to (0%, 100%)", () => {
-    // size 4: tile 13 is at row 3 col 0; size 3: tile 7 is at row 2 col 0
     expect(tileBackgroundPosition(13, 4)).toEqual({ x: "0%", y: "100%" });
     expect(tileBackgroundPosition(7, 3)).toEqual({ x: "0%", y: "100%" });
   });
