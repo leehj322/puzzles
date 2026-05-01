@@ -142,6 +142,17 @@
     "restart": "다시 하기",
     "hint": "방향키로 움직여서 같은 숫자를 합쳐봐"
   },
+  "lightsOut": {
+    "sizeLabel": "크기",
+    "difficultyLabel": "난이도",
+    "difficulty": {
+      "easy": "쉬움",
+      "normal": "보통",
+      "hard": "어려움"
+    },
+    "newGame": "새 게임",
+    "wonDesc": "{moves}번 만에 모든 불을 껐어!"
+  },
   "header": {
     "title": "Puzzles",
     "lightMode": "라이트 모드",

@@ -142,6 +142,17 @@
     "restart": "やり直す",
     "hint": "矢印キーで動かして同じ数字をくっつけてみよう"
   },
+  "lightsOut": {
+    "sizeLabel": "サイズ",
+    "difficultyLabel": "難易度",
+    "difficulty": {
+      "easy": "かんたん",
+      "normal": "ふつう",
+      "hard": "むずかしい"
+    },
+    "newGame": "新しいゲーム",
+    "wonDesc": "{moves}手で全部消せたよ!"
+  },
   "header": {
     "title": "Puzzles",
     "lightMode": "ライトモード",

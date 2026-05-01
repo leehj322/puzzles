@@ -142,6 +142,17 @@
     "restart": "Try again",
     "hint": "Use the arrow keys to slide and merge matching numbers"
   },
+  "lightsOut": {
+    "sizeLabel": "Size",
+    "difficultyLabel": "Difficulty",
+    "difficulty": {
+      "easy": "Easy",
+      "normal": "Normal",
+      "hard": "Hard"
+    },
+    "newGame": "New game",
+    "wonDesc": "All lights out in {moves} moves!"
+  },
   "header": {
     "title": "Puzzles",
     "lightMode": "Light mode",
