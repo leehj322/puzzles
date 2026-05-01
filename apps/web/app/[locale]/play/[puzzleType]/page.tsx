@@ -14,6 +14,9 @@ const renderStandalone = (type: PuzzleType) => {
     case "sudoku":
     case "nonogram":
     case "minesweeper":
+    case "word-search":
+    case "memory":
+    case "lights-out":
       // hasEntries === true for all these (or unavailable) → blocked above.
       // Exhaustive branch for type safety.
       notFound();

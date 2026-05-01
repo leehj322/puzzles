@@ -3,7 +3,10 @@ export type PuzzleTypeId =
   | "sudoku"
   | "2048"
   | "nonogram"
-  | "minesweeper";
+  | "minesweeper"
+  | "word-search"
+  | "memory"
+  | "lights-out";
 
 export type PuzzleType = {
   id: PuzzleTypeId;
@@ -52,6 +55,27 @@ export const PUZZLE_TYPES: readonly PuzzleType[] = [
     id: "minesweeper",
     nameKey: "puzzleTypes.minesweeper.name",
     descKey: "puzzleTypes.minesweeper.desc",
+    available: false,
+    hasEntries: true,
+  },
+  {
+    id: "word-search",
+    nameKey: "puzzleTypes.word-search.name",
+    descKey: "puzzleTypes.word-search.desc",
+    available: false,
+    hasEntries: true,
+  },
+  {
+    id: "memory",
+    nameKey: "puzzleTypes.memory.name",
+    descKey: "puzzleTypes.memory.desc",
+    available: false,
+    hasEntries: true,
+  },
+  {
+    id: "lights-out",
+    nameKey: "puzzleTypes.lights-out.name",
+    descKey: "puzzleTypes.lights-out.desc",
     available: false,
     hasEntries: true,
   },

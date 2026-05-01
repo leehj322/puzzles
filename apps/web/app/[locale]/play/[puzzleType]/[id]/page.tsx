@@ -33,8 +33,12 @@ const renderEntry = (type: PuzzleType, id: string) => {
     }
     case "2048":
     case "minesweeper":
+    case "word-search":
+    case "memory":
+    case "lights-out":
       // hasEntries === false → blocked by the guard above.
-      // minesweeper has no entry UI yet. Exhaustive branch for type safety.
+      // Unavailable types are also blocked by `getPuzzleType`.
+      // Exhaustive branch for type safety.
       notFound();
   }
 };
