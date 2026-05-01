@@ -35,7 +35,7 @@ export const PUZZLE_TYPES: readonly PuzzleType[] = [
     id: "nonogram",
     nameKey: "puzzleTypes.nonogram.name",
     descKey: "puzzleTypes.nonogram.desc",
-    available: false,
+    available: true,
   },
   {
     id: "minesweeper",

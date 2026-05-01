@@ -1,8 +1,13 @@
 import { notFound } from "next/navigation";
 
-import { getPuzzleImage, getSudokuPuzzle } from "@puzzles/core";
+import {
+  getNonogramPuzzle,
+  getPuzzleImage,
+  getSudokuPuzzle,
+} from "@puzzles/core";
 
 import { Game2048PlayClient } from "./game-2048-play-client";
+import { NonogramPlayClient } from "./nonogram-play-client";
 import { PuzzlePlayClient } from "./puzzle-play-client";
 import { SudokuPlayClient } from "./sudoku-play-client";
 
@@ -27,6 +32,14 @@ export function PuzzlePlayView({
       notFound();
     }
     return <SudokuPlayClient puzzle={puzzle} />;
+  }
+
+  if (puzzleType === "nonogram") {
+    const puzzle = getNonogramPuzzle(imageId);
+    if (!puzzle) {
+      notFound();
+    }
+    return <NonogramPlayClient puzzle={puzzle} />;
   }
 
   const image = getPuzzleImage(puzzleType, imageId);

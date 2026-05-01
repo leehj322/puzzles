@@ -97,6 +97,20 @@
       "erase": "Erase"
     }
   },
+  "nonogram": {
+    "difficultyLabel": "Difficulty",
+    "sizeLabel": "Size",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "pad": {
+      "fill": "Fill",
+      "mark": "Mark X",
+      "erase": "Erase"
+    }
+  },
   "puzzlePlay": {
     "moves": "Moves",
     "time": "Time",

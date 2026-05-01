@@ -97,6 +97,20 @@
       "erase": "지우기"
     }
   },
+  "nonogram": {
+    "difficultyLabel": "난이도",
+    "sizeLabel": "크기",
+    "difficulty": {
+      "easy": "쉬움",
+      "medium": "보통",
+      "hard": "어려움"
+    },
+    "pad": {
+      "fill": "채우기",
+      "mark": "X 표시",
+      "erase": "지우기"
+    }
+  },
   "puzzlePlay": {
     "moves": "이동",
     "time": "시간",

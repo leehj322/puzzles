@@ -97,6 +97,20 @@
       "erase": "消す"
     }
   },
+  "nonogram": {
+    "difficultyLabel": "難易度",
+    "sizeLabel": "サイズ",
+    "difficulty": {
+      "easy": "かんたん",
+      "medium": "ふつう",
+      "hard": "むずかしい"
+    },
+    "pad": {
+      "fill": "塗る",
+      "mark": "Xマーク",
+      "erase": "消す"
+    }
+  },
   "puzzlePlay": {
     "moves": "手数",
     "time": "タイム",
