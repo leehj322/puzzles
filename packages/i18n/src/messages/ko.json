@@ -20,7 +20,10 @@
         "sudoku": "스도쿠",
         "2048": "2048",
         "nonogram": "노노그램",
-        "minesweeper": "지뢰찾기"
+        "minesweeper": "지뢰찾기",
+        "word-search": "단어 찾기",
+        "memory": "카드 짝맞추기",
+        "lights-out": "라이트 아웃"
       }
     },
     "features": {
@@ -77,6 +80,18 @@
     "minesweeper": {
       "name": "지뢰찾기",
       "desc": "숫자 단서로 지뢰를 살살 피해봐"
+    },
+    "word-search": {
+      "name": "단어 찾기",
+      "desc": "글자를 쭉 이어서 숨은 단어를 찾아봐"
+    },
+    "memory": {
+      "name": "카드 짝맞추기",
+      "desc": "카드를 뒤집어 보고 같은 짝을 기억해봐"
+    },
+    "lights-out": {
+      "name": "라이트 아웃",
+      "desc": "칸을 눌러 옆 칸까지 끄고 모든 불을 꺼봐"
     }
   },
   "puzzleList": {

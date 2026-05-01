@@ -20,7 +20,10 @@
         "sudoku": "数独",
         "2048": "2048",
         "nonogram": "ノノグラム",
-        "minesweeper": "マインスイーパ"
+        "minesweeper": "マインスイーパ",
+        "word-search": "ワードサーチ",
+        "memory": "神経衰弱",
+        "lights-out": "ライツアウト"
       }
     },
     "features": {
@@ -77,6 +80,18 @@
     "minesweeper": {
       "name": "マインスイーパ",
       "desc": "数字のヒントで地雷をうまく避けよう"
+    },
+    "word-search": {
+      "name": "ワードサーチ",
+      "desc": "文字をなぞって隠れた単語を見つけよう"
+    },
+    "memory": {
+      "name": "神経衰弱",
+      "desc": "カードをめくって同じ絵のペアを見つけよう"
+    },
+    "lights-out": {
+      "name": "ライツアウト",
+      "desc": "マスを押して周りを反転させ、全部消そう"
     }
   },
   "puzzleList": {

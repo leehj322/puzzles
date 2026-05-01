@@ -20,7 +20,10 @@
         "sudoku": "Sudoku",
         "2048": "2048",
         "nonogram": "Nonogram",
-        "minesweeper": "Minesweeper"
+        "minesweeper": "Minesweeper",
+        "word-search": "Word Search",
+        "memory": "Memory",
+        "lights-out": "Lights Out"
       }
     },
     "features": {
@@ -77,6 +80,18 @@
     "minesweeper": {
       "name": "Minesweeper",
       "desc": "Use the number clues to gently dodge the mines"
+    },
+    "word-search": {
+      "name": "Word Search",
+      "desc": "Drag across letters to uncover the hidden words"
+    },
+    "memory": {
+      "name": "Memory Match",
+      "desc": "Flip cards two at a time and remember where the pairs live"
+    },
+    "lights-out": {
+      "name": "Lights Out",
+      "desc": "Tap tiles to toggle their neighbors and turn every light off"
     }
   },
   "puzzleList": {
