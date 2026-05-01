@@ -76,8 +76,8 @@ export const PUZZLE_TYPES: readonly PuzzleType[] = [
     id: "lights-out",
     nameKey: "puzzleTypes.lights-out.name",
     descKey: "puzzleTypes.lights-out.desc",
-    available: false,
-    hasEntries: true,
+    available: true,
+    hasEntries: false,
   },
 ] as const;
 
