@@ -14,10 +14,11 @@
     "showcase": {
       "eyebrow": "PUZZLES, PLURAL",
       "title": "Many kinds of puzzles, one place",
-      "desc": "Sliding, sudoku, nonogram, minesweeper — pick whichever matches your mood today.",
+      "desc": "Many kinds of puzzles in one place — pick whichever matches your mood today.",
       "kinds": {
         "sliding": "Sliding",
         "sudoku": "Sudoku",
+        "2048": "2048",
         "nonogram": "Nonogram",
         "minesweeper": "Minesweeper"
       }
@@ -28,7 +29,7 @@
       "items": {
         "variety": {
           "title": "Many puzzles",
-          "desc": "Sliding, sudoku, nonogram, minesweeper — pick the puzzle that fits your mood."
+          "desc": "Many kinds of puzzles in one place — pick the puzzle that fits your mood."
         },
         "upload": {
           "title": "Make your own",
@@ -65,6 +66,10 @@
       "name": "Sudoku",
       "desc": "Fill the grid following the rules"
     },
+    "2048": {
+      "name": "2048",
+      "desc": "Merge matching numbers and rack up the score"
+    },
     "nonogram": {
       "name": "Nonogram",
       "desc": "Paint cells from the hints to reveal a picture"
@@ -100,6 +105,13 @@
     "wonDesc": "{moves} moves · {time}",
     "next": "Next puzzle",
     "toList": "Back to list"
+  },
+  "game2048": {
+    "score": "Score",
+    "gameOver": "No more moves",
+    "gameOverDesc": "Final score {score}",
+    "restart": "Restart",
+    "hint": "Use the arrow keys to slide tiles and merge matching numbers"
   },
   "header": {
     "title": "Puzzles",
