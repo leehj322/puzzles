@@ -17,7 +17,7 @@ export function PuzzleListView({ puzzleType }: { puzzleType: string }) {
       <main className="px-6 pt-6 pb-12 sm:pt-8 sm:pb-16">
         <div className="mx-auto max-w-4xl flex flex-col gap-10">
           <header className="flex items-center justify-between gap-4">
-            <h1 className="font-sans text-h2">{t("title")}</h1>
+            <h1 className="font-display text-h2 font-semibold">{t("title")}</h1>
             <AddPuzzleButton />
           </header>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -41,7 +41,7 @@ export function PuzzleListView({ puzzleType }: { puzzleType: string }) {
     <main className="px-6 pt-6 pb-12 sm:pt-8 sm:pb-16">
       <div className="mx-auto max-w-4xl flex flex-col gap-10">
         <header className="flex items-center justify-between gap-4">
-          <h1 className="font-sans text-h2">{t("title")}</h1>
+          <h1 className="font-display text-h2 font-semibold">{t("title")}</h1>
           <AddPuzzleButton />
         </header>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
