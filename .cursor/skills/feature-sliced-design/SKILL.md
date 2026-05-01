@@ -378,6 +378,12 @@ Do **not** preload all references.
   folder go"):
   → Read `references/layer-structure.md`
 
+- **When designing or reviewing a slice's public API** (`index.ts` exports),
+  debating wildcard vs explicit re-exports, fixing circular imports through
+  a slice's own `index.ts`, splitting `shared/ui` / `shared/lib` barrels for
+  tree-shaking, or evaluating barrel-file performance trade-offs:
+  → Read `references/public-api.md`
+
 - **When resolving cross-import issues** between slices on the same layer,
   evaluating the @x pattern, or dealing with excessive entity coupling:
   → Read `references/cross-import-patterns.md`

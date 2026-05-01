@@ -25,6 +25,7 @@ relevant skill when its trigger conditions match the task.
   principle, public API via `index.ts`, no same-layer cross-imports.
 - **Conditional references** (load only when needed):
   - `references/layer-structure.md` — folder/file structure setup
+  - `references/public-api.md` — `index.ts` design, barrels, circular imports
   - `references/cross-import-patterns.md` — same-layer sharing & `@x` pattern
   - `references/framework-integration.md` — Next.js / Vite / path aliases
   - `references/practical-exmples.md` — auth, API, Redux, React Query patterns
