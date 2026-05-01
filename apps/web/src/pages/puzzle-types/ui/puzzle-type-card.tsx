@@ -60,7 +60,7 @@ export function PuzzleTypeCard({ type }: { type: PuzzleType }) {
     );
   }
 
-  const href = type.id === "2048" ? "/play/2048" : `/browse/${type.id}`;
+  const href = type.hasEntries ? `/browse/${type.id}` : `/play/${type.id}`;
 
   return (
     <Link href={href} className="block h-full focus-visible:outline-none">
