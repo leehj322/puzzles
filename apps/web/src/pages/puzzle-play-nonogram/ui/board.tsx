@@ -4,7 +4,24 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/shared/lib/cn";
 
-import { useNonogramStore, type NonogramCell } from "../model/nonogram-store";
+import {
+  useNonogramStore,
+  type NonogramAction,
+  type NonogramTool,
+} from "../model/nonogram-store";
+
+/**
+ * Maps an input gesture (primary vs secondary mouse button) and the active
+ * tool to the action applied to the cell. Default tool ("fill"): left=fill,
+ * right=mark. Inverted tool ("mark"): left=mark, right=fill.
+ */
+const actionFor = (
+  tool: NonogramTool,
+  button: "primary" | "secondary",
+): NonogramAction => {
+  if (tool === "fill") return button === "primary" ? "fill" : "mark";
+  return button === "primary" ? "mark" : "fill";
+};
 
 export function NonogramBoard() {
   const rows = useNonogramStore((s) => s.rows);
@@ -17,15 +34,22 @@ export function NonogramBoard() {
   const maxRowHintLen = hints.rows.reduce((m, h) => Math.max(m, h.length), 0);
   const maxColHintLen = hints.cols.reduce((m, h) => Math.max(m, h.length), 0);
 
-  const dragRef = useRef<{ visited: Set<number> } | null>(null);
+  // The action is locked at pointer-down and reused for the rest of the
+  // drag, so dragging across cells doesn't flip between fill/mark.
+  const dragRef = useRef<{
+    visited: Set<number>;
+    action: NonogramAction;
+  } | null>(null);
   const [dragging, setDragging] = useState(false);
 
   const onCellInteract = useCallback(
     (r: number, c: number) => {
+      const drag = dragRef.current;
+      if (!drag) return;
       const idx = r * cols + c;
-      if (dragRef.current?.visited.has(idx)) return;
-      dragRef.current?.visited.add(idx);
-      toggleCell(r, c);
+      if (drag.visited.has(idx)) return;
+      drag.visited.add(idx);
+      toggleCell(r, c, drag.action);
     },
     [cols, toggleCell],
   );
@@ -127,10 +151,22 @@ export function NonogramBoard() {
                 type="button"
                 role="gridcell"
                 aria-label={`R${r + 1}C${c + 1} ${cell}`}
+                onContextMenu={(e) => e.preventDefault()}
                 onPointerDown={(e) => {
+                  // Touch / pen always behave as primary; mouse middle/back
+                  // buttons are ignored.
+                  let button: "primary" | "secondary" | null = null;
+                  if (e.pointerType !== "mouse") button = "primary";
+                  else if (e.button === 0) button = "primary";
+                  else if (e.button === 2) button = "secondary";
+                  if (button === null) return;
+
                   e.preventDefault();
                   (e.target as Element).releasePointerCapture?.(e.pointerId);
-                  dragRef.current = { visited: new Set() };
+                  dragRef.current = {
+                    visited: new Set(),
+                    action: actionFor(tool, button),
+                  };
                   setDragging(true);
                   onCellInteract(r, c);
                 }}
@@ -138,17 +174,21 @@ export function NonogramBoard() {
                   if (dragRef.current) onCellInteract(r, c);
                 }}
                 className={cn(
-                  "relative flex items-center justify-center",
-                  "border-r border-b border-border",
+                  "relative flex items-center justify-center bg-bg",
+                  "border-r border-b border-border hover:bg-surface-warm",
                   thickRight && "border-r-2 border-r-fg/50",
                   thickBottom && "border-b-2 border-b-fg/50",
                   c === cols - 1 && "border-r-0",
                   r === rows - 1 && "border-b-0",
-                  cellBg(cell, tool),
-                  "transition-colors duration-75",
                   "focus:outline-none",
                 )}
               >
+                {cell === "filled" && (
+                  <span
+                    aria-hidden
+                    className="absolute inset-[12%] rounded-[15%] bg-fg transition-transform duration-75 ease-(--ease-bounce)"
+                  />
+                )}
                 {cell === "marked" && (
                   <span className="font-mono text-fg-muted text-[clamp(10px,2vw,16px)] leading-none">
                     ×
@@ -163,8 +203,3 @@ export function NonogramBoard() {
   );
 }
 
-const cellBg = (cell: NonogramCell, _tool: string): string => {
-  if (cell === "filled") return "bg-fg hover:bg-fg";
-  if (cell === "marked") return "bg-bg hover:bg-surface-warm";
-  return "bg-bg hover:bg-surface-warm";
-};

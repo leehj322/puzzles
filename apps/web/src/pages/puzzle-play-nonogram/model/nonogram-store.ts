@@ -11,6 +11,12 @@ import {
 
 export type NonogramCell = "empty" | "filled" | "marked";
 export type NonogramTool = "fill" | "mark";
+/**
+ * Which action to apply to a cell. Determined by the input gesture
+ * (primary vs secondary click) and the active tool, then passed to
+ * `toggleCell` so the store stays input-method agnostic.
+ */
+export type NonogramAction = "fill" | "mark";
 
 type Grid = NonogramCell[][];
 
@@ -33,7 +39,7 @@ interface NonogramState {
   init: (puzzle: NonogramPuzzle) => void;
   reset: () => void;
   setTool: (tool: NonogramTool) => void;
-  toggleCell: (r: number, c: number) => void;
+  toggleCell: (r: number, c: number, action: NonogramAction) => void;
   dismissWin: () => void;
 }
 
@@ -84,14 +90,14 @@ export const useNonogramStore = create<NonogramState>((set, get) => ({
 
   setTool: (tool) => set({ tool }),
 
-  toggleCell: (r, c) => {
+  toggleCell: (r, c, action) => {
     const state = get();
     if (state.finishedAt !== null) return;
     if (r < 0 || r >= state.rows || c < 0 || c >= state.cols) return;
 
     const current = state.cells[r][c];
     const target: NonogramCell =
-      state.tool === "fill"
+      action === "fill"
         ? current === "filled"
           ? "empty"
           : "filled"
