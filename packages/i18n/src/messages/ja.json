@@ -1,0 +1,122 @@
+{
+  "common": {
+    "play": "プレイ",
+    "back": "戻る",
+    "comingSoon": "準備中",
+    "soon": "もうすぐ",
+    "reset": "やり直す"
+  },
+  "home": {
+    "eyebrow": "PUZZLES",
+    "title": "今日はどのパズルで遊ぶ?",
+    "subtitle": "ひとピースずつ、ゆっくりほぐしていこう。",
+    "cta": "パズルをはじめる",
+    "showcase": {
+      "eyebrow": "PUZZLES, PLURAL",
+      "title": "いろんなパズル、ぜんぶここに",
+      "desc": "今の気分にぴったりのパズルを選んでみてね。",
+      "kinds": {
+        "sliding": "スライド",
+        "sudoku": "数独",
+        "2048": "2048",
+        "nonogram": "ノノグラム",
+        "minesweeper": "マインスイーパ"
+      }
+    },
+    "features": {
+      "eyebrow": "WHY PUZZLES",
+      "title": "ゆるく、でもちゃんと夢中になれる",
+      "items": {
+        "variety": {
+          "title": "選ぶ楽しさ",
+          "desc": "いろんなパズルがひとつの場所に。気になるものから遊んでみてね。"
+        },
+        "upload": {
+          "title": "自分だけのパズル",
+          "desc": "好きな写真をアップして、みんなで遊べるパズルにしちゃおう。"
+        },
+        "ranking": {
+          "title": "ランキング勝負",
+          "desc": "最短時間と最少手数で勝負しよう。リーダーボードは毎日リセットされるよ。"
+        }
+      }
+    },
+    "finalCta": {
+      "title": "準備できた? まずは1ピース、そっと動かしてみよう",
+      "desc": "登録なしでもすぐに遊べるよ。",
+      "button": "今すぐはじめる"
+    },
+    "footer": {
+      "tagline": "ひとピースずつ、ゆっくりほぐしていこう。",
+      "communityTitle": "コミュニティ",
+      "discord": "Discordに遊びにくる",
+      "contactTitle": "お問い合わせ",
+      "contact": "メールを送る",
+      "rights": "© 2026 Puzzles. All rights reserved."
+    }
+  },
+  "puzzleTypes": {
+    "title": "どのパズルで遊ぶ?",
+    "subtitle": "好きなパズルを選んでね。",
+    "sliding": {
+      "name": "スライドパズル",
+      "desc": "ピースを動かして絵を完成させよう"
+    },
+    "sudoku": {
+      "name": "数独",
+      "desc": "数字を埋めてルールを完成させよう"
+    },
+    "2048": {
+      "name": "2048",
+      "desc": "同じ数字をくっつけてスコアをためよう"
+    },
+    "nonogram": {
+      "name": "ノノグラム",
+      "desc": "ヒントを頼りにマスを塗って絵を見つけよう"
+    },
+    "minesweeper": {
+      "name": "マインスイーパ",
+      "desc": "数字のヒントで地雷をうまく避けよう"
+    }
+  },
+  "puzzleList": {
+    "title": "パズルを選んでね",
+    "addPuzzle": "追加",
+    "addPuzzleSoon": "自分でパズルを追加する機能はもう少し待ってね"
+  },
+  "sudoku": {
+    "difficultyLabel": "難易度",
+    "difficulty": {
+      "easy": "かんたん",
+      "medium": "ふつう",
+      "hard": "むずかしい",
+      "expert": "エキスパート"
+    },
+    "pad": {
+      "notes": "メモ",
+      "erase": "消す"
+    }
+  },
+  "puzzlePlay": {
+    "moves": "手数",
+    "time": "タイム",
+    "preview": "プレビュー",
+    "won": "できた!",
+    "wonDesc": "{moves}手 / {time}",
+    "next": "次のパズル",
+    "toList": "一覧に戻る"
+  },
+  "game2048": {
+    "score": "スコア",
+    "gameOver": "もう動かせるところがないよ",
+    "gameOverDesc": "最終スコア {score}点",
+    "restart": "やり直す",
+    "hint": "矢印キーで動かして同じ数字をくっつけてみよう"
+  },
+  "header": {
+    "title": "Puzzles",
+    "lightMode": "ライトモード",
+    "darkMode": "ダークモード",
+    "language": "言語"
+  }
+}
