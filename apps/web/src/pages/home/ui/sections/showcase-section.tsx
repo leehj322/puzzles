@@ -56,7 +56,7 @@ export function ShowcaseSection() {
               <li
                 key={`${type.id}-${index}`}
                 aria-hidden={index >= PUZZLE_TYPES.length}
-                className="flex w-64 shrink-0 flex-col gap-4 rounded-card border border-border bg-surface p-5 shadow-sm sm:w-72"
+                className="flex w-52 shrink-0 flex-col gap-4 rounded-card border border-border bg-surface p-5 shadow-sm sm:w-56"
               >
                 <div
                   className={`flex h-32 items-center justify-center overflow-hidden rounded-media ${PUZZLE_TYPE_ACCENT[type.id]}`}
