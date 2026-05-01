@@ -69,15 +69,21 @@ export function NonogramBoard() {
 
   if (rows === 0 || cols === 0) return null;
 
-  const cellPx = `clamp(14px, min(${Math.floor(70 / cols)}vw, ${Math.floor(60 / rows)}vh), 44px)`;
+  // Cell size scales with viewport. The horizontal budget reserves ~6rem
+  // for row hints; the vertical budget leaves room for hud/pad. Mobile
+  // (~390px wide) lands around 28-32px per cell for a 10-wide board, up
+  // from ~24px before. Capped at 56px so desktops don't get cartoonish
+  // tiles on small puzzles.
+  const cellPx =
+    `clamp(20px, min((96vw - 6rem) / ${cols}, (70vh - 8rem) / ${rows}), 56px)`;
 
   return (
     <div
-      className="select-none touch-none"
+      className="mx-auto select-none touch-none"
       style={{
-        display: "grid",
-        gridTemplateColumns: `auto 1fr`,
-        gridTemplateRows: `auto 1fr`,
+        display: "inline-grid",
+        gridTemplateColumns: `auto auto`,
+        gridTemplateRows: `auto auto`,
       }}
     >
       <div />
