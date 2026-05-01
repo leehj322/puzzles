@@ -1,8 +1,8 @@
 "use client";
 
+import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Plus } from "lucide-react";
 
 import { toast } from "@puzzles/toast";
 
