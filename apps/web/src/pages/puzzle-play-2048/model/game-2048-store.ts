@@ -25,7 +25,7 @@ interface Game2048StoreState {
 }
 
 export const useGame2048Store = create<Game2048StoreState>((set, get) => ({
-  state: createInitialState(),
+  state: { tiles: [], score: 0, nextId: 0 },
   gameOver: false,
   animating: false,
 
