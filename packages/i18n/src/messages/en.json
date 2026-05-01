@@ -3,18 +3,18 @@
     "play": "Play",
     "back": "Back",
     "comingSoon": "Coming Soon",
-    "soon": "SOON",
-    "reset": "Reset"
+    "soon": "See you soon",
+    "reset": "Try again"
   },
   "home": {
     "eyebrow": "PUZZLES",
-    "title": "Today's puzzle",
-    "subtitle": "Slow down. Slide the pieces into place.",
+    "title": "What are we puzzling today?",
+    "subtitle": "One piece at a time. Let your mind unwind.",
     "cta": "Start a puzzle",
     "showcase": {
       "eyebrow": "PUZZLES, PLURAL",
-      "title": "Many kinds of puzzles, one place",
-      "desc": "Many kinds of puzzles in one place — pick whichever matches your mood today.",
+      "title": "Lots of puzzles, one cozy spot",
+      "desc": "Pick the one that fits your mood today and dive in.",
       "kinds": {
         "sliding": "Sliding",
         "sudoku": "Sudoku",
@@ -25,64 +25,64 @@
     },
     "features": {
       "eyebrow": "WHY PUZZLES",
-      "title": "A calm place to play, every day",
+      "title": "Easy-going, but seriously into it",
       "items": {
         "variety": {
-          "title": "Many puzzles",
-          "desc": "Many kinds of puzzles in one place — pick the puzzle that fits your mood."
+          "title": "Pick your flavor",
+          "desc": "Lots of puzzle kinds gathered in one spot. Go with whatever calls to you."
         },
         "upload": {
           "title": "Make your own",
-          "desc": "Upload your own image and turn it into a puzzle for everyone else to play."
+          "desc": "Upload your photo and turn it into a puzzle for everyone to play."
         },
         "ranking": {
-          "title": "Climb the leaderboard",
-          "desc": "Race for the fewest moves and fastest time. The board refreshes every day."
+          "title": "One round, ranked",
+          "desc": "Race for the fewest moves and fastest time. Boards reset fresh every day."
         }
       }
     },
     "finalCta": {
-      "title": "Ready? Slide your first tile.",
-      "desc": "No sign-up needed. Just start playing.",
-      "button": "Start a puzzle"
+      "title": "Ready? Give that first piece a little nudge",
+      "desc": "No sign-up needed — you can jump right in.",
+      "button": "Start playing now"
     },
     "footer": {
-      "tagline": "Slow down. Slide the pieces into place.",
+      "tagline": "One piece at a time. Let your mind unwind.",
       "communityTitle": "Community",
-      "discord": "Join Discord",
+      "discord": "Hop into Discord",
       "contactTitle": "Contact",
-      "contact": "Send an email",
+      "contact": "Send us an email",
       "rights": "© 2026 Puzzles. All rights reserved."
     }
   },
   "puzzleTypes": {
-    "title": "Puzzle types",
-    "subtitle": "Pick a puzzle to play.",
+    "title": "What's it gonna be today?",
+    "subtitle": "Pick a puzzle you like.",
     "sliding": {
       "name": "Sliding Puzzle",
-      "desc": "Slide tiles to restore the image"
+      "desc": "Slide the pieces gently to bring the picture back"
     },
     "sudoku": {
       "name": "Sudoku",
-      "desc": "Fill the grid following the rules"
+      "desc": "Fill the numbers in and match the rules"
     },
     "2048": {
       "name": "2048",
-      "desc": "Merge matching numbers and rack up the score"
+      "desc": "Tap matching numbers together and stack up the score"
     },
     "nonogram": {
       "name": "Nonogram",
-      "desc": "Paint cells from the hints to reveal a picture"
+      "desc": "Follow the hints to color cells and find the hidden picture"
     },
     "minesweeper": {
       "name": "Minesweeper",
-      "desc": "Use number clues to avoid the mines"
+      "desc": "Use the number clues to gently dodge the mines"
     }
   },
   "puzzleList": {
-    "title": "Choose a puzzle",
+    "title": "Pick a puzzle",
     "addPuzzle": "Add",
-    "addPuzzleSoon": "Adding your own puzzles is coming soon"
+    "addPuzzleSoon": "Adding your own puzzles is coming soon — hang tight!"
   },
   "sudoku": {
     "difficultyLabel": "Difficulty",
@@ -101,17 +101,17 @@
     "moves": "Moves",
     "time": "Time",
     "preview": "Preview",
-    "won": "Solved!",
+    "won": "You got it!",
     "wonDesc": "{moves} moves · {time}",
     "next": "Next puzzle",
     "toList": "Back to list"
   },
   "game2048": {
     "score": "Score",
-    "gameOver": "No more moves",
+    "gameOver": "Nowhere left to merge",
     "gameOverDesc": "Final score {score}",
-    "restart": "Restart",
-    "hint": "Use the arrow keys to slide tiles and merge matching numbers"
+    "restart": "Try again",
+    "hint": "Use the arrow keys to slide and merge matching numbers"
   },
   "header": {
     "title": "Puzzles",

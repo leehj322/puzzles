@@ -3,18 +3,18 @@
     "play": "플레이",
     "back": "뒤로",
     "comingSoon": "준비 중",
-    "soon": "준비중",
-    "reset": "다시 시작"
+    "soon": "곧 만나요",
+    "reset": "다시 하기"
   },
   "home": {
     "eyebrow": "PUZZLES",
-    "title": "오늘의 퍼즐",
-    "subtitle": "조각을 맞추며 잠시 머무르세요.",
+    "title": "오늘은 어떤 퍼즐로 놀까?",
+    "subtitle": "한 조각씩 천천히, 마음을 풀어봐.",
     "cta": "퍼즐 시작하기",
     "showcase": {
       "eyebrow": "PUZZLES, PLURAL",
-      "title": "한 곳에서, 여러 종류의 퍼즐",
-      "desc": "여러 종류의 퍼즐을 한 자리에서 — 오늘의 기분에 맞는 퍼즐을 골라보세요.",
+      "title": "여러 퍼즐, 한 자리에",
+      "desc": "오늘 기분에 딱 맞는 퍼즐, 골라서 놀아봐.",
       "kinds": {
         "sliding": "슬라이딩",
         "sudoku": "스도쿠",
@@ -25,64 +25,64 @@
     },
     "features": {
       "eyebrow": "WHY PUZZLES",
-      "title": "느슨하지만, 진심인 퍼즐 플랫폼",
+      "title": "느슨하게, 그치만 진심으로",
       "items": {
         "variety": {
-          "title": "다양한 퍼즐",
-          "desc": "다양한 종류의 퍼즐을 한 자리에서 — 취향에 맞는 퍼즐을 골라 즐겨보세요."
+          "title": "골라먹는 재미",
+          "desc": "여러 종류의 퍼즐을 한 자리에 모았어. 끌리는 걸로 골라봐."
         },
         "upload": {
-          "title": "내가 만드는 퍼즐",
-          "desc": "직접 이미지를 등록해서 다른 사람들이 풀 수 있는 퍼즐을 만들어보세요."
+          "title": "내 퍼즐 만들기",
+          "desc": "내 사진을 올려서 다른 사람도 풀 수 있는 퍼즐을 만들어봐."
         },
         "ranking": {
-          "title": "랭킹 경쟁",
-          "desc": "최단 시간, 최소 이동으로 사람들과 겨루세요. 매일 갱신되는 리더보드가 기다려요."
+          "title": "랭킹 한판",
+          "desc": "최단 시간, 최소 이동으로 한판 붙어봐. 리더보드는 매일 새로 시작돼."
         }
       }
     },
     "finalCta": {
-      "title": "준비됐다면, 첫 조각을 밀어보세요",
-      "desc": "회원가입 없이도 바로 시작할 수 있어요.",
-      "button": "지금 퍼즐 시작하기"
+      "title": "준비됐어? 첫 조각부터 살짝 밀어봐",
+      "desc": "회원가입 없이도 바로 시작할 수 있어.",
+      "button": "지금 바로 시작"
     },
     "footer": {
-      "tagline": "조각을 맞추며 잠시 머무르세요.",
+      "tagline": "한 조각씩 천천히, 마음을 풀어봐.",
       "communityTitle": "커뮤니티",
-      "discord": "디스코드 참여하기",
+      "discord": "디스코드 놀러가기",
       "contactTitle": "문의",
       "contact": "이메일 보내기",
       "rights": "© 2026 Puzzles. All rights reserved."
     }
   },
   "puzzleTypes": {
-    "title": "퍼즐 종류",
-    "subtitle": "원하는 퍼즐을 골라보세요.",
+    "title": "어떤 퍼즐로 놀까?",
+    "subtitle": "마음에 드는 퍼즐을 골라봐.",
     "sliding": {
       "name": "슬라이드 퍼즐",
-      "desc": "조각을 밀어 그림을 완성하세요"
+      "desc": "조각을 살살 밀어서 그림을 완성해봐"
     },
     "sudoku": {
       "name": "스도쿠",
-      "desc": "숫자를 채워 규칙을 완성하세요"
+      "desc": "숫자를 채워서 규칙을 맞춰봐"
     },
     "2048": {
       "name": "2048",
-      "desc": "같은 숫자를 합쳐 점수를 모으세요"
+      "desc": "같은 숫자끼리 톡톡 합쳐서 점수를 모아봐"
     },
     "nonogram": {
       "name": "노노그램",
-      "desc": "힌트를 따라 칸을 칠해 그림을 완성하세요"
+      "desc": "힌트 따라 칸을 칠해서 숨은 그림을 찾아봐"
     },
     "minesweeper": {
       "name": "지뢰찾기",
-      "desc": "숫자를 단서로 지뢰를 피해 보세요"
+      "desc": "숫자 단서로 지뢰를 살살 피해봐"
     }
   },
   "puzzleList": {
-    "title": "퍼즐 선택",
+    "title": "퍼즐 골라봐",
     "addPuzzle": "등록하기",
-    "addPuzzleSoon": "퍼즐 직접 등록 기능은 조금만 기다려주세요"
+    "addPuzzleSoon": "퍼즐 직접 등록 기능은 조금만 기다려줘"
   },
   "sudoku": {
     "difficultyLabel": "난이도",
@@ -108,10 +108,10 @@
   },
   "game2048": {
     "score": "점수",
-    "gameOver": "더 이상 합칠 수 없어요",
+    "gameOver": "더는 합칠 곳이 없어",
     "gameOverDesc": "최종 점수 {score}점",
-    "restart": "다시 시작",
-    "hint": "방향키로 타일을 움직여 같은 숫자를 합쳐보세요"
+    "restart": "다시 하기",
+    "hint": "방향키로 움직여서 같은 숫자를 합쳐봐"
   },
   "header": {
     "title": "Puzzles",
