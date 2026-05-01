@@ -13,13 +13,6 @@ const DIFFICULTY_TONE: Record<SudokuPuzzle["difficulty"], BadgeProps["tone"]> =
     expert: "rose",
   };
 
-const DIFFICULTY_BG: Record<SudokuPuzzle["difficulty"], string> = {
-  easy: "bg-mint",
-  medium: "bg-sky",
-  hard: "bg-peach",
-  expert: "bg-rose",
-};
-
 export function SudokuPuzzleCard({ puzzle }: { puzzle: SudokuPuzzle }) {
   const t = useTranslations("sudoku");
 
@@ -32,10 +25,7 @@ export function SudokuPuzzleCard({ puzzle }: { puzzle: SudokuPuzzle }) {
         <div className="relative aspect-square bg-surface-warm p-4">
           <SudokuMiniBoard givens={puzzle.givens} />
           <span className="absolute right-3 top-3">
-            <Badge
-              tone={DIFFICULTY_TONE[puzzle.difficulty]}
-              className={DIFFICULTY_BG[puzzle.difficulty]}
-            >
+            <Badge tone={DIFFICULTY_TONE[puzzle.difficulty]}>
               {t(`difficulty.${puzzle.difficulty}`)}
             </Badge>
           </span>
@@ -51,7 +41,7 @@ function SudokuMiniBoard({
   givens: readonly (readonly number[])[];
 }) {
   return (
-    <div className="grid h-full w-full grid-cols-9 grid-rows-9 overflow-hidden rounded-md border-2 border-fg/70 bg-bg">
+    <div className="grid h-full w-full grid-cols-9 grid-rows-9 overflow-hidden rounded-tile border-2 border-border-strong bg-bg">
       {givens.flatMap((row, r) =>
         row.map((value, c) => {
           const thickRight = c === 2 || c === 5;
@@ -60,10 +50,10 @@ function SudokuMiniBoard({
             <div
               key={`${r}-${c}`}
               className={[
-                "flex items-center justify-center font-display text-[clamp(8px,1.2vw,12px)] font-semibold leading-none",
+                "flex items-center justify-center font-sans text-tag font-semibold leading-none",
                 "border-r border-b border-border",
-                thickRight ? "border-r-2 border-r-fg/70" : "",
-                thickBottom ? "border-b-2 border-b-fg/70" : "",
+                thickRight ? "border-r-2 border-r-border-strong" : "",
+                thickBottom ? "border-b-2 border-b-border-strong" : "",
                 c === 8 ? "border-r-0" : "",
                 r === 8 ? "border-b-0" : "",
               ].join(" ")}
