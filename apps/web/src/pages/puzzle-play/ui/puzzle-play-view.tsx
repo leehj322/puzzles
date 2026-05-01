@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { getPuzzleImage, getSudokuPuzzle } from "@puzzles/core";
 
+import { Game2048PlayClient } from "./game-2048-play-client";
 import { PuzzlePlayClient } from "./puzzle-play-client";
 import { SudokuPlayClient } from "./sudoku-play-client";
 
@@ -10,8 +11,16 @@ export function PuzzlePlayView({
   imageId,
 }: {
   puzzleType: string;
-  imageId: string;
+  imageId?: string;
 }) {
+  if (puzzleType === "2048") {
+    return <Game2048PlayClient />;
+  }
+
+  if (!imageId) {
+    notFound();
+  }
+
   if (puzzleType === "sudoku") {
     const puzzle = getSudokuPuzzle(imageId);
     if (!puzzle) {

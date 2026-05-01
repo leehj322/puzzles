@@ -16,6 +16,12 @@ const getBackHref = (pathname: string): string | null => {
     return `/browse/${segments[1]}`;
   }
 
+  // Play routes without a per-puzzle id (e.g. /play/2048) go back to the
+  // puzzle types page since they have no list view.
+  if (segments[0] === "play" && segments.length === 2) {
+    return "/browse";
+  }
+
   return null;
 };
 
