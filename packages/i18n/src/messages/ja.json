@@ -8,7 +8,7 @@
     "close": "閉じる"
   },
   "home": {
-    "eyebrow": "PUZZLES",
+    "eyebrow": "PUFFY",
     "title": "今日はどのパズルで遊ぶ?",
     "subtitle": "ひとピースずつ、ゆっくりほぐしていこう。",
     "cta": "パズルをはじめる",
@@ -28,7 +28,7 @@
       }
     },
     "features": {
-      "eyebrow": "WHY PUZZLES",
+      "eyebrow": "WHY PUFFY",
       "title": "ゆるく、でもちゃんと夢中になれる",
       "items": {
         "variety": {
@@ -56,7 +56,7 @@
       "discord": "Discordに遊びにくる",
       "contactTitle": "お問い合わせ",
       "contact": "メールを送る",
-      "rights": "© 2026 Puzzles. All rights reserved."
+      "rights": "© 2026 Puffy. All rights reserved."
     }
   },
   "puzzleTypes": {
@@ -165,7 +165,7 @@
     "wonDesc": "{moves}手で全部消せたよ!"
   },
   "header": {
-    "title": "Puzzles",
+    "title": "Puffy",
     "lightMode": "ライトモード",
     "darkMode": "ダークモード",
     "language": "言語"

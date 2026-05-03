@@ -47,7 +47,7 @@ const sunflower = Sunflower({
 });
 
 export const metadata: Metadata = {
-  title: "Puzzles",
+  title: "Puffy",
   description: "Solve a variety of puzzles",
 };
 

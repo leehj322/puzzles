@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Puffy logo">
+  <rect x="0"    y="0"    width="7" height="7" rx="1.6" fill="#ff7a59"/>
+  <rect x="8.5"  y="0"    width="7" height="7" rx="1.6" fill="#ffd23f"/>
+  <rect x="17"   y="0"    width="7" height="7" rx="1.6" fill="#ffb39c"/>
+  <rect x="0"    y="8.5"  width="7" height="7" rx="1.6" fill="#5fb8ff"/>
+  <rect x="8.5"  y="8.5"  width="7" height="7" rx="1.6" fill="#ff5d9e"/>
+  <rect x="17"   y="8.5"  width="7" height="7" rx="1.6" fill="#5ce0c0"/>
+  <rect x="0"    y="17"   width="7" height="7" rx="1.6" fill="#ffb39c"/>
+  <rect x="8.5"  y="17"   width="7" height="7" rx="1.6" fill="#ff7a59"/>
+  <rect x="17"   y="17"   width="7" height="7" rx="1.6" fill="#ffd23f"/>
+</svg>

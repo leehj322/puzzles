@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Puzzles</Text>
+      <Text style={styles.title}>Puffy</Text>
       <Text style={styles.subtitle}>Mobile app scaffold</Text>
       <StatusBar style="auto" />
     </View>

@@ -8,7 +8,7 @@
     "close": "닫기"
   },
   "home": {
-    "eyebrow": "PUZZLES",
+    "eyebrow": "PUFFY",
     "title": "오늘은 어떤 퍼즐로 놀까?",
     "subtitle": "한 조각씩 천천히, 마음을 풀어봐.",
     "cta": "퍼즐 시작하기",
@@ -28,7 +28,7 @@
       }
     },
     "features": {
-      "eyebrow": "WHY PUZZLES",
+      "eyebrow": "WHY PUFFY",
       "title": "느슨하게, 그치만 진심으로",
       "items": {
         "variety": {
@@ -56,7 +56,7 @@
       "discord": "디스코드 놀러가기",
       "contactTitle": "문의",
       "contact": "이메일 보내기",
-      "rights": "© 2026 Puzzles. All rights reserved."
+      "rights": "© 2026 Puffy. All rights reserved."
     }
   },
   "puzzleTypes": {
@@ -165,7 +165,7 @@
     "wonDesc": "{moves}번 만에 모든 불을 껐어!"
   },
   "header": {
-    "title": "Puzzles",
+    "title": "Puffy",
     "lightMode": "라이트 모드",
     "darkMode": "다크 모드",
     "language": "언어"

@@ -8,7 +8,7 @@
     "close": "Close"
   },
   "home": {
-    "eyebrow": "PUZZLES",
+    "eyebrow": "PUFFY",
     "title": "What are we puzzling today?",
     "subtitle": "One piece at a time. Let your mind unwind.",
     "cta": "Start a puzzle",
@@ -28,7 +28,7 @@
       }
     },
     "features": {
-      "eyebrow": "WHY PUZZLES",
+      "eyebrow": "WHY PUFFY",
       "title": "Easy-going, but seriously into it",
       "items": {
         "variety": {
@@ -56,7 +56,7 @@
       "discord": "Hop into Discord",
       "contactTitle": "Contact",
       "contact": "Send us an email",
-      "rights": "© 2026 Puzzles. All rights reserved."
+      "rights": "© 2026 Puffy. All rights reserved."
     }
   },
   "puzzleTypes": {
@@ -165,7 +165,7 @@
     "wonDesc": "All lights out in {moves} moves!"
   },
   "header": {
-    "title": "Puzzles",
+    "title": "Puffy",
     "lightMode": "Light mode",
     "darkMode": "Dark mode",
     "language": "Language"

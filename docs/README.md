@@ -1,6 +1,12 @@
-# Puzzles
+<p align="center">
+  <img src="./assets/logo.svg" alt="Puffy logo" width="96" height="96" />
+</p>
 
-다양한 퍼즐을 즐길 수 있는 웹/모바일 플랫폼.
+<h1 align="center">Puffy</h1>
+
+<p align="center">
+  다양한 퍼즐을 즐길 수 있는 웹/모바일 플랫폼.
+</p>
 
 현재 6종의 퍼즐을 플레이할 수 있습니다 — 슬라이딩, 스도쿠, 2048,
 노노그램, 라이트아웃, 사과게임. UI는 `ko / en / ja` 3개 locale을 지원합니다.
