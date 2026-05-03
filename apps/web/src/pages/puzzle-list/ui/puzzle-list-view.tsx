@@ -39,8 +39,8 @@ const renderCards = (puzzleType: PuzzleTypeId) => {
     }
     case "2048":
     case "lights-out":
+    case "fruit-box":
     case "minesweeper":
-    case "word-search":
     case "memory":
       // Route guards redirect single-instance puzzles (2048, lights-out)
       // and block unavailable types before reaching here.

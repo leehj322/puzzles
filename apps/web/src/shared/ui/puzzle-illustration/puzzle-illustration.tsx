@@ -1,3 +1,4 @@
+import { FruitBoxIllustration } from "./fruit-box";
 import { Game2048Illustration } from "./game-2048";
 import { LightsOutIllustration } from "./lights-out";
 import { MemoryIllustration } from "./memory";
@@ -5,7 +6,6 @@ import { MinesweeperIllustration } from "./minesweeper";
 import { NonogramIllustration } from "./nonogram";
 import { SlidingIllustration } from "./sliding";
 import { SudokuIllustration } from "./sudoku";
-import { WordSearchIllustration } from "./word-search";
 
 import type { PuzzleTypeId } from "@puzzles/core";
 
@@ -15,7 +15,7 @@ export const PUZZLE_TYPE_ACCENT: Record<PuzzleTypeId, string> = {
   "2048": "bg-rose",
   nonogram: "bg-peach",
   minesweeper: "bg-butter",
-  "word-search": "bg-lilac",
+  "fruit-box": "bg-lilac",
   memory: "bg-accent-soft",
   "lights-out": "bg-fg/10",
 };
@@ -26,7 +26,7 @@ const ILLUSTRATIONS: Record<PuzzleTypeId, () => React.ReactElement> = {
   "2048": Game2048Illustration,
   nonogram: NonogramIllustration,
   minesweeper: MinesweeperIllustration,
-  "word-search": WordSearchIllustration,
+  "fruit-box": FruitBoxIllustration,
   memory: MemoryIllustration,
   "lights-out": LightsOutIllustration,
 };

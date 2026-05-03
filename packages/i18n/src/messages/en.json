@@ -21,7 +21,7 @@
         "2048": "2048",
         "nonogram": "Nonogram",
         "minesweeper": "Minesweeper",
-        "word-search": "Word Search",
+        "fruit-box": "Fruit Box",
         "memory": "Memory",
         "lights-out": "Lights Out"
       }
@@ -81,9 +81,9 @@
       "name": "Minesweeper",
       "desc": "Use the number clues to gently dodge the mines"
     },
-    "word-search": {
-      "name": "Word Search",
-      "desc": "Drag across letters to uncover the hidden words"
+    "fruit-box": {
+      "name": "Fruit Box",
+      "desc": "Drag rectangles of apples that sum to 10 and clear them"
     },
     "memory": {
       "name": "Memory Match",
@@ -141,6 +141,16 @@
     "gameOverDesc": "Final score {score}",
     "restart": "Try again",
     "hint": "Use the arrow keys to slide and merge matching numbers"
+  },
+  "fruitBox": {
+    "score": "Score",
+    "time": "Time left",
+    "best": "Best",
+    "newGame": "New game",
+    "gameOver": "Time's up!",
+    "gameOverDesc": "You collected {score} apples",
+    "hint": "Drag rectangles of apples that sum to 10",
+    "currentSum": "Sum"
   },
   "lightsOut": {
     "sizeLabel": "Size",

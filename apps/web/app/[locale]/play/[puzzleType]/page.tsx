@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getPuzzleType, type PuzzleType } from "@puzzles/core";
 
 import { Game2048PlayView } from "@/pages/puzzle-play-2048";
+import { FruitBoxPlayView } from "@/pages/puzzle-play-fruit-box";
 import { LightsOutPlayView } from "@/pages/puzzle-play-lights-out";
 
 const renderStandalone = (type: PuzzleType) => {
@@ -13,11 +14,12 @@ const renderStandalone = (type: PuzzleType) => {
       return <Game2048PlayView />;
     case "lights-out":
       return <LightsOutPlayView />;
+    case "fruit-box":
+      return <FruitBoxPlayView />;
     case "sliding":
     case "sudoku":
     case "nonogram":
     case "minesweeper":
-    case "word-search":
     case "memory":
       // hasEntries === true for all these (or unavailable) → blocked above.
       // Exhaustive branch for type safety.

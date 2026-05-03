@@ -4,7 +4,7 @@ export type PuzzleTypeId =
   | "2048"
   | "nonogram"
   | "minesweeper"
-  | "word-search"
+  | "fruit-box"
   | "memory"
   | "lights-out";
 
@@ -59,11 +59,11 @@ export const PUZZLE_TYPES: readonly PuzzleType[] = [
     hasEntries: true,
   },
   {
-    id: "word-search",
-    nameKey: "puzzleTypes.word-search.name",
-    descKey: "puzzleTypes.word-search.desc",
-    available: false,
-    hasEntries: true,
+    id: "fruit-box",
+    nameKey: "puzzleTypes.fruit-box.name",
+    descKey: "puzzleTypes.fruit-box.desc",
+    available: true,
+    hasEntries: false,
   },
   {
     id: "memory",

@@ -33,8 +33,8 @@ const renderEntry = (type: PuzzleType, id: string) => {
     }
     case "2048":
     case "lights-out":
+    case "fruit-box":
     case "minesweeper":
-    case "word-search":
     case "memory":
       // hasEntries === false → blocked by the guard above.
       // Unavailable types are also blocked by `getPuzzleType`.

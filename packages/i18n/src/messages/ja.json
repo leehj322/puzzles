@@ -21,7 +21,7 @@
         "2048": "2048",
         "nonogram": "ノノグラム",
         "minesweeper": "マインスイーパ",
-        "word-search": "ワードサーチ",
+        "fruit-box": "りんごゲーム",
         "memory": "神経衰弱",
         "lights-out": "ライツアウト"
       }
@@ -81,9 +81,9 @@
       "name": "マインスイーパ",
       "desc": "数字のヒントで地雷をうまく避けよう"
     },
-    "word-search": {
-      "name": "ワードサーチ",
-      "desc": "文字をなぞって隠れた単語を見つけよう"
+    "fruit-box": {
+      "name": "りんごゲーム",
+      "desc": "合計が10になるようにりんごをドラッグして集めよう"
     },
     "memory": {
       "name": "神経衰弱",
@@ -141,6 +141,16 @@
     "gameOverDesc": "最終スコア {score}点",
     "restart": "やり直す",
     "hint": "矢印キーで動かして同じ数字をくっつけてみよう"
+  },
+  "fruitBox": {
+    "score": "スコア",
+    "time": "のこり時間",
+    "best": "ベスト",
+    "newGame": "新しいゲーム",
+    "gameOver": "時間切れ!",
+    "gameOverDesc": "りんごを{score}個集めたよ",
+    "hint": "合計が10になるように四角くドラッグしてみよう",
+    "currentSum": "合計"
   },
   "lightsOut": {
     "sizeLabel": "サイズ",

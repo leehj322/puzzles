@@ -21,7 +21,7 @@
         "2048": "2048",
         "nonogram": "노노그램",
         "minesweeper": "지뢰찾기",
-        "word-search": "단어 찾기",
+        "fruit-box": "사과게임",
         "memory": "카드 짝맞추기",
         "lights-out": "라이트 아웃"
       }
@@ -81,9 +81,9 @@
       "name": "지뢰찾기",
       "desc": "숫자 단서로 지뢰를 살살 피해봐"
     },
-    "word-search": {
-      "name": "단어 찾기",
-      "desc": "글자를 쭉 이어서 숨은 단어를 찾아봐"
+    "fruit-box": {
+      "name": "사과게임",
+      "desc": "합이 10이 되도록 사과를 드래그해서 모아봐"
     },
     "memory": {
       "name": "카드 짝맞추기",
@@ -141,6 +141,16 @@
     "gameOverDesc": "최종 점수 {score}점",
     "restart": "다시 하기",
     "hint": "방향키로 움직여서 같은 숫자를 합쳐봐"
+  },
+  "fruitBox": {
+    "score": "점수",
+    "time": "남은 시간",
+    "best": "베스트",
+    "newGame": "새 게임",
+    "gameOver": "시간 종료!",
+    "gameOverDesc": "{score}개의 사과를 모았어",
+    "hint": "합이 10이 되도록 사각형으로 드래그해봐",
+    "currentSum": "합계"
   },
   "lightsOut": {
     "sizeLabel": "크기",
